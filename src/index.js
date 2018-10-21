@@ -8,5 +8,5 @@ function App(req, res) {
     return app(req, res);
 }
 
-const note = App;
-export { note }
+const switchDev = App;
+export { switchDev }

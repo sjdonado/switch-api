@@ -7,27 +7,27 @@ admin.initializeApp({
 const db = admin.firestore();
 
 const router = Router()
-router.get('/', async (req, res, next) => {
+router.get('/users/', async (req, res, next) => {
     try {
-        const noteSnapshot = await db.collection('notes').get();
-        const notes = [];
-        noteSnapshot.forEach((doc) => {
-            notes.push({
+        const usersSnapshot = await db.collection('users').get();
+        const users = [];
+        usersnapshot.forEach((doc) => {
+            users.push({
                 id: doc.id,
                 data: doc.data()
             });
         });
-        res.json(notes);
+        res.json(users);
     } catch(e) {
         next(e);
     }
 });
 
-router.get('/:id', async(req, res, next) => {
+router.get('/users/:id', async(req, res, next) => {
     try {
         const id = req.params.id;
         if (!id) throw new Error('id is blank');
-        const note = await db.collection('notes').doc(id).get();
+        const note = await db.collection('users').doc(id).get();
         if (!note.exists) {
             throw new Error('note does not exists');
         }
@@ -40,12 +40,12 @@ router.get('/:id', async(req, res, next) => {
     }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/users/', async (req, res, next) => {
     try {
         const text = req.body.text;
         if (!text) throw new Error('Text is blank');
         const data = { text };
-        const ref = await db.collection('notes').add(data);
+        const ref = await db.collection('users').add(data);
         res.json({
             id: ref.id,
             data
@@ -55,14 +55,14 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/users/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
         const text = req.body.text;
         if (!id) throw new Error('id is blank');
         if (!text) throw new Error('Text is blank');
         const data = { text };
-        const ref = await db.collection('notes').doc(id).set(data, { merge: true });
+        const ref = await db.collection('users').doc(id).set(data, { merge: true });
         res.json({
             id,
             data
@@ -72,11 +72,11 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/users/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
         if (!id) throw new Error('id is blank');
-        await db.collection('notes').doc(id).delete();
+        await db.collection('users').doc(id).delete();
         res.json({
             id
         });

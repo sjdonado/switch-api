@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./**/*.js ./*.js --retain-lines -d dist"
+    "build": "babel ./**/*.es7 ./*.es7 --retain-lines -d ./",
+    "deploy": "gcloud functions deploy switchDev --runtime nodejs8 --trigger-http"
   },
+  "engines": {"node": "8"},
   "author": "sjdonado",
   "license": "ISC",
   "dependencies": {

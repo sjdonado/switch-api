@@ -7,7 +7,7 @@ import methodOverride from 'method-override';
 const app = express()
 app.use(cors({ origin: true }));
 app.use(express.json());
-app.use('/api', route);
+app.use('/api/v1', route);
 app.use(methodOverride())
 app.use((err, req, res, next) => {
     res.status(400).json({
