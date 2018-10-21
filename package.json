@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./**/*.es7 ./*.es7 --retain-lines -d ./",
+    "prebuild": "babel ./src/index.js --retain-lines --out-file index.js",
+    "build": "webpack --config webpack.config.js",
     "deploy": "gcloud functions deploy switchDev --runtime nodejs8 --trigger-http"
   },
-  "engines": {"node": "8"},
+  "engines": {
+    "node": "8"
+  },
   "author": "sjdonado",
   "license": "ISC",
   "dependencies": {
@@ -22,8 +25,14 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-node-externals": "^1.7.2"
   }
 }

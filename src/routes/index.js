@@ -4,12 +4,16 @@ import admin from 'firebase-admin';
 admin.initializeApp({
   credential: admin.credential.applicationDefault()
 });
+
 const db = admin.firestore();
 
-const router = Router()
-router.get('/users/', async (req, res, next) => {
+const router = Router();
+
+router.get('/users', async (req, res, next) => {
+    console.log('DB', db);
     try {
         const usersSnapshot = await db.collection('users').get();
+        console.log('USERS_SNAPSHOT', usersSnapshot);
         const users = [];
         usersnapshot.forEach((doc) => {
             users.push({
@@ -19,6 +23,7 @@ router.get('/users/', async (req, res, next) => {
         });
         res.json(users);
     } catch(e) {
+        console.log(e);
         next(e);
     }
 });
