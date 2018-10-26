@@ -13,11 +13,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(formidable());
-app.use(methodOverride());
 
 app.use('/api/v1', apiV1);
 
-app.use((req, res, next) => {
+app.use(methodOverride());
+
+app.use((req, res) => {
   res.status(404);
   res.json({
     error: true,
@@ -25,7 +26,7 @@ app.use((req, res, next) => {
   });
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   let {
     statusCode = 500, message,
   } = err;
@@ -33,12 +34,12 @@ app.use((err, req, res, next) => {
   switch (err.type) {
     case 'entity.parse.failed':
       message = `Bad Request: ${err.message}`;
-    break;
+      break;
     default:
-    if (err.message.startsWith('ValidationError')) {
-      statusCode = 422;
-    }
-    break;
+      if (err.message.startsWith('ValidationError')) {
+        statusCode = 422;
+      }
+      break;
   }
 
   res.status(statusCode);

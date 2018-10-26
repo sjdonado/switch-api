@@ -4,7 +4,7 @@
   "author": "sjdonado",
   "license": "ISC",
   "scripts": {
-    "start": "gcloud functions deploy switchDev --trigger-http"
+    "start": "gcloud functions deploy switchDev --runtime nodejs8 --trigger-http"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",

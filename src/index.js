@@ -8,5 +8,5 @@ function App(req, res) {
   return app(req, res);
 }
 
-const switchDev = App;
-export { switchDev }
+export const switchDev = App;
+export default switchDev;
