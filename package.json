@@ -1,38 +1,24 @@
 {
-  "name": "switch-back",
+  "name": "switch-api",
   "version": "1.0.0",
   "description": "Serverless cloud functions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "babel ./src/index.js --retain-lines --out-file index.js",
-    "build": "webpack --config webpack.config.js",
-    "deploy": "gcloud functions deploy switchDev --runtime nodejs8 --trigger-http"
-  },
-  "engines": {
-    "node": "8"
+    "prebuild": "rimraf dist",
+    "build": "babel ./src/routes/*.js ./src/*.js --out-dir dist && copyfiles src/package.json dist",
+    "deploy": "yarn --cwd dist/src install && yarn --cwd dist/src start"
   },
   "author": "sjdonado",
   "license": "ISC",
-  "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "firebase-admin": "^5.12.1",
-    "install": "^0.11.0",
-    "method-override": "^2.3.10",
-    "npm": "^6.1.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.22.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9",
-    "webpack-node-externals": "^1.7.2"
+    "babel-preset-es2015": "^6.24.1",
+    "copyfiles": "^2.1.0",
+    "rimraf": "^2.6.2"
   }
 }

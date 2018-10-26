@@ -1,13 +1,13 @@
 {
     "presets": [
-      ["env", {
+        ["env", {
         "targets": {
-          "node": "8.11.1"
+            "node": "6.11"
         }
-      }]
+        }]
     ],
     "plugins": [
-      ["transform-runtime", {"polyfill": false, "regenerator": true}],
-      "transform-object-rest-spread"
+        ["transform-runtime", {"polyfill": false, "regenerator": true}],
+        "transform-object-rest-spread"
     ]
-  }
+}

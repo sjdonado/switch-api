@@ -1,4 +1,4 @@
-import express, { Router, Request } from 'express';
+import { Router } from 'express';
 import admin from 'firebase-admin';
 
 admin.initializeApp({
