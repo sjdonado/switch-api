@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf dist",
-    "build": "babel ./src/routes/*.js ./src/*.js --out-dir dist && copyfiles src/package.json dist",
+    "build": "babel . --out-dir dist --ignore node_modules && copyfiles src/package.json dist",
     "deploy": "yarn --cwd dist/src install && yarn --cwd dist/src start"
   },
   "author": "sjdonado",
