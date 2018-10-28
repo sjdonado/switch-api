@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "yarn --cwd dist/src install",
     "prebuild": "rimraf dist",
     "build": "babel . --out-dir dist --ignore node_modules && copyfiles src/package.json dist",
-    "postbuild": "yarn --cwd dist/src install",
+    "predeploy": "yarn run update",
     "deploy": "yarn --cwd dist/src start",
     "prelocal-deploy": "functions start",
     "local-deploy": "functions deploy switchDev -S dist/src --trigger-http",

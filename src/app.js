@@ -2,27 +2,28 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import methodOverride from 'method-override';
-import formidable from 'express-formidable';
+import fileParser from 'express-multipart-file-parser';
 
 import apiV1 from './api/v1';
 
 const app = express();
 
 app.use(cors());
+app.use(methodOverride());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(formidable());
+app.use(fileParser);
 
 app.use('/api/v1', apiV1);
 
-app.use(methodOverride());
-
-app.use((req, res) => {
+app.use((req, res, next) => {
   res.status(404);
   res.json({
-    error: true,
-    message: 'Not found',
+    error: {
+      code: 404,
+      message: 'Not found',
+    },
   });
 });
 
@@ -44,8 +45,10 @@ app.use((err, req, res) => {
 
   res.status(statusCode);
   res.json({
-    error: true,
-    message,
+    error: {
+      code: statusCode,
+      message,
+    },
   });
 });
 

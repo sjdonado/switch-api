@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { db, storage } from '../../../firebase';
+import { db, uploadFile } from '../../../firebase';
 
 const router = Router();
 
@@ -34,20 +34,47 @@ router.get('/:id', async (req, res, next) => {
 });
 
 router.post('/', async (req, res, next) => {
-  const { body, fields } = req;
+  const { body } = req;
+  res.json({
+    body,
+  });
+  // try {
+  //   if (!body) throw new Error('Wrong params');
+  //   const ref = await db.collection('users').add(body);
+  //   if (!fields && body.profile_picture) {
+  //     console.log(fields, storage);
+  //     // storage.child(`/profile_pictures/${body.profile_picture}.jpg`);
+  //     // storage.put(file).then(function(snapshot) {
+  //     //   console.log('Uploaded a blob or file!');
+  //     // });
+  //   }
+  //   res.json({
+  //     id: ref.id,
+  //     body,
+  //   });
+  // } catch (e) {
+  //   next(e);
+  // }
+});
+
+router.put('/upload', async (req, res, next) => {
+  const { files } = req;
+  const url = await uploadFile(files[0], next);
+  res.json({
+    url,
+  });
+});
+
+router.put('/:id', async (req, res, next) => {
+  const { body, params } = req;
+  const { id } = params;
   try {
+    if (!id) throw new Error('Id is blank');
     if (!body) throw new Error('Wrong params');
-    const ref = await db.collection('users').add(body);
-    if (!fields && body.profile_picture) {
-      console.log(fields, storage);
-      // storage.child(`/profile_pictures/${body.profile_picture}.jpg`);
-      // storage.put(file).then(function(snapshot) {
-      //   console.log('Uploaded a blob or file!');
-      // });
-    }
+    const ref = await db.collection('users').doc(id).set(body, { merge: true });
     res.json({
-      id: ref.id,
-      body,
+      id,
+      ref,
     });
   } catch (e) {
     next(e);
