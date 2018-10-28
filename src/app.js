@@ -12,10 +12,10 @@ const app = express();
 app.use(cors());
 app.use(methodOverride());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(fileParser);
 app.use(authentication);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(fileParser);
 
 app.use('/api/v1', apiV1);
 

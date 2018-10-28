@@ -34,68 +34,55 @@ router.get('/', async (req, res, next) => {
 });
 
 router.post('/', async (req, res, next) => {
-  const { body } = req;
+  const { user, body } = req;
+  if (!user || !body) next(new Error('Bad request'));
   try {
-    if (!body) throw new Error('Wrong params');
-    const ref = await db.collection('users').add(body);
-    res.json({
-      id: ref.id,
-      body,
+    // const verifyUser = await db.collection('users')
+    //   .where('uid', '==', user.uid)
+    //   .get();
+    Object.assign(body, {
+      phone_number: user.phone_number,
     });
+    await db.collection('users').doc(user.uid).set(body);
+    res.json(body);
   } catch (e) {
     next(e);
   }
 });
 
-router.put('/upload', async (req, res, next) => {
-  const { files } = req;
+router.post('/upload', async (req, res, next) => {
+  const { files, user } = req;
   const url = await uploadFile(files[0], next);
-  res.json({
-    url,
-  });
+  await db.collection('users')
+    .doc(user.uid)
+    .set({
+      profile_picture: url,
+    }, { merge: true });
+  res.json({ url });
 });
 
 router.put('/', async (req, res, next) => {
-  const { body, params } = req;
-  const { id } = params;
+  const { user, body } = req;
+  if (!user || !body) next(new Error('Bad request'));
   try {
-    if (!id) throw new Error('Id is blank');
-    if (!body) throw new Error('Wrong params');
-    const ref = await db.collection('users').doc(id).set(body, { merge: true });
-    res.json({
-      id,
-      ref,
-    });
-  } catch (e) {
-    next(e);
-  }
-});
-
-router.put('/', async (req, res, next) => {
-  const { body, params } = req;
-  const { id } = params;
-  try {
-    if (!id) throw new Error('Id is blank');
-    if (!body) throw new Error('Wrong params');
-    const ref = await db.collection('users').doc(id).set(body, { merge: true });
-    res.json({
-      id,
-      ref,
-    });
+    await db.collection('users')
+      .doc(user.uid)
+      .set(body, { merge: true });
+    res.json(body);
   } catch (e) {
     next(e);
   }
 });
 
 router.delete('/', async (req, res, next) => {
-  const { params } = req;
-  const { id } = params;
+  const { user } = req;
+  if (!user) next(new Error('Bad request'));
   try {
-    if (!id) throw new Error('Wrong params');
-    await db.collection('users').doc(id).delete();
-    res.json({
-      id,
-    });
+    await db.collection('users')
+      .where('uid', '==', user.uid)
+      .get()
+      .delete();
+    res.json({});
   } catch (e) {
     next(e);
   }
