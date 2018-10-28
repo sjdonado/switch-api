@@ -5,6 +5,7 @@ import methodOverride from 'method-override';
 import fileParser from 'express-multipart-file-parser';
 
 import apiV1 from './api/v1';
+import { authentication } from './lib/auth';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileParser);
+app.use(authentication);
 
 app.use('/api/v1', apiV1);
 

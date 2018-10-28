@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { db, uploadFile } from '../../../firebase';
+import { db, uploadFile } from '../../../lib/firebase';
 
 const router = Router();
 
-router.get('/', async (req, res, next) => {
+router.get('/all', async (req, res, next) => {
   try {
     const usersSnapshot = await db.collection('users').get();
     res.json(usersSnapshot.docs.map(doc => ({
@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   const { params } = req;
   const { id } = params;
   try {
@@ -35,26 +35,16 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   const { body } = req;
-  res.json({
-    body,
-  });
-  // try {
-  //   if (!body) throw new Error('Wrong params');
-  //   const ref = await db.collection('users').add(body);
-  //   if (!fields && body.profile_picture) {
-  //     console.log(fields, storage);
-  //     // storage.child(`/profile_pictures/${body.profile_picture}.jpg`);
-  //     // storage.put(file).then(function(snapshot) {
-  //     //   console.log('Uploaded a blob or file!');
-  //     // });
-  //   }
-  //   res.json({
-  //     id: ref.id,
-  //     body,
-  //   });
-  // } catch (e) {
-  //   next(e);
-  // }
+  try {
+    if (!body) throw new Error('Wrong params');
+    const ref = await db.collection('users').add(body);
+    res.json({
+      id: ref.id,
+      body,
+    });
+  } catch (e) {
+    next(e);
+  }
 });
 
 router.put('/upload', async (req, res, next) => {
@@ -65,7 +55,7 @@ router.put('/upload', async (req, res, next) => {
   });
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/', async (req, res, next) => {
   const { body, params } = req;
   const { id } = params;
   try {
@@ -81,7 +71,7 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-router.put('/:id', async (req, res, next) => {
+router.put('/', async (req, res, next) => {
   const { body, params } = req;
   const { id } = params;
   try {
@@ -97,7 +87,7 @@ router.put('/:id', async (req, res, next) => {
   }
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/', async (req, res, next) => {
   const { params } = req;
   const { id } = params;
   try {
