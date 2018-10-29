@@ -7,9 +7,11 @@
 ```
 # Setup server
 switch-dev-smartrends@appspot.gserviceaccount.com // App Engine default service account
-* client_email -> ~/.config/gcloud/application_default_credentials.json
 * Permission iam.serviceAccounts.signBlob in IAM
 * Cloud functions service agent
+
+# Setup android
+* values/google_maps_api
 
 # Local deploy
 ```

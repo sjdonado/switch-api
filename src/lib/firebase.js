@@ -1,9 +1,10 @@
 import admin from 'firebase-admin';
 import uuidv3 from 'uuid/v3';
 import { tmpFile } from './utils';
+import serviceAccount from '../service_account.json';
 
 admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
+  credential: admin.credential.cert(serviceAccount),
 });
 
 const BUCKET_NAME = 'switch-dev-smartrends';
