@@ -16,17 +16,12 @@ router.get('/all', async (req, res, next) => {
 });
 
 router.get('/', async (req, res, next) => {
-  const { params } = req;
-  const { id } = params;
+  const { user } = req;
+  if (!user) next(new Error('Bad request'));
   try {
-    if (!id) throw new Error('Id is blank');
-    const user = await db.collection('users').doc(id).get();
-    if (!user.exists) {
-      throw new Error('User does not exists');
-    }
+    const userInfo = await db.collection('users').doc(user.uid).get();
     res.json({
-      id: user.id,
-      data: user.data(),
+      data: userInfo.data(),
     });
   } catch (e) {
     next(e);
@@ -44,7 +39,7 @@ router.post('/', async (req, res, next) => {
       phone_number: user.phone_number,
     });
     await db.collection('users').doc(user.uid).set(body);
-    res.json(body);
+    res.json({ data: body });
   } catch (e) {
     next(e);
   }
@@ -56,9 +51,9 @@ router.post('/upload', async (req, res, next) => {
   await db.collection('users')
     .doc(user.uid)
     .set({
-      profile_picture: url,
+      profile_picture: url[0],
     }, { merge: true });
-  res.json({ url });
+  res.json({ data: { profile_picture: url[0] } });
 });
 
 router.put('/', async (req, res, next) => {
@@ -68,7 +63,7 @@ router.put('/', async (req, res, next) => {
     await db.collection('users')
       .doc(user.uid)
       .set(body, { merge: true });
-    res.json(body);
+    res.json({ data: body });
   } catch (e) {
     next(e);
   }
@@ -82,7 +77,7 @@ router.delete('/', async (req, res, next) => {
       .where('uid', '==', user.uid)
       .get()
       .delete();
-    res.json({});
+    res.json({ data: {} });
   } catch (e) {
     next(e);
   }
