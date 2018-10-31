@@ -38,8 +38,10 @@ router.post('/', async (req, res, next) => {
     Object.assign(body, {
       phone_number: user.phone_number,
     });
-    await db.collection('users').doc(user.uid).set(body);
-    res.json({ data: body });
+    const userInfo = await db.collection('users')
+      .doc(user.uid)
+      .set(body, { merge: true });
+    res.json({ data: userInfo.data() });
   } catch (e) {
     next(e);
   }
