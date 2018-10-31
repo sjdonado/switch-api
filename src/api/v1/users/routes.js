@@ -32,16 +32,18 @@ router.post('/', async (req, res, next) => {
   const { user, body } = req;
   if (!user || !body) next(new Error('Bad request'));
   try {
-    // const verifyUser = await db.collection('users')
-    //   .where('uid', '==', user.uid)
-    //   .get();
-    Object.assign(body, {
-      phone_number: user.phone_number,
-    });
-    const userInfo = await db.collection('users')
-      .doc(user.uid)
-      .set(body, { merge: true });
-    res.json({ data: userInfo.data() });
+    const userInfo = await db.collection('users').doc(user.uid).get();
+    if (userInfo && userInfo.data()) {
+      res.json({ data: userInfo.data() });
+    } else {
+      Object.assign(body, {
+        phone_number: user.phone_number,
+      });
+      await db.collection('users')
+        .doc(user.uid)
+        .set(body, { merge: true });
+      res.json({ data: body });
+    }
   } catch (e) {
     next(e);
   }
@@ -76,7 +78,7 @@ router.delete('/', async (req, res, next) => {
   if (!user) next(new Error('Bad request'));
   try {
     await db.collection('users')
-      .where('uid', '==', user.uid)
+      .doc(user.uid)
       .get()
       .delete();
     res.json({ data: {} });
