@@ -16,8 +16,7 @@
     "fast-crc32c": "^1.0.4",
     "firebase-admin": "^5.12.1",
     "method-override": "^2.3.10",
-    "tmp": "^0.0.33",
-    "uuid": "^3.3.2"
+    "tmp": "^0.0.33"
   },
   "private": true
 }

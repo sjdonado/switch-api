@@ -1,5 +1,4 @@
 import admin from 'firebase-admin';
-import uuidv3 from 'uuid/v3';
 import { tmpFile } from './utils';
 import serviceAccount from '../service_account.json';
 
@@ -14,7 +13,7 @@ export const db = admin.firestore();
 db.settings({ timestampsInSnapshots: true });
 
 export async function uploadFile(file, next) {
-  const fileName = `${uuidv3.URL}.${file.mimetype.split('/')[1]}`;
+  const fileName = `${new Date().getTime()}.${file.mimetype.split('/')[1]}`;
   const options = {
     destination: storage.file(`profile_pictures/${fileName}`),
     resumable: false,

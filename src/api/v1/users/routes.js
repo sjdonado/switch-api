@@ -41,7 +41,7 @@ router.post('/', async (req, res, next) => {
       });
       await db.collection('users')
         .doc(user.uid)
-        .set(body, { merge: true });
+        .update(body);
       res.json({ data: body });
     }
   } catch (e) {
@@ -54,9 +54,9 @@ router.post('/upload', async (req, res, next) => {
   const url = await uploadFile(files[0], next);
   await db.collection('users')
     .doc(user.uid)
-    .set({
+    .update({
       profile_picture: url[0],
-    }, { merge: true });
+    });
   res.json({ data: { profile_picture: url[0] } });
 });
 
