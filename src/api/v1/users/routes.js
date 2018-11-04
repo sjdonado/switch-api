@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { db, uploadFile } from '../../../lib/firebase';
+import { db, uploadFile, getUser, deleteFile } from '../../../lib/firebase';
 
 const router = Router();
 
@@ -17,31 +17,25 @@ router.get('/all', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   const { user } = req;
-  if (!user) next(new Error('Bad request'));
-  try {
-    const userInfo = await db.collection('users').doc(user.uid).get();
-    res.json({
-      data: userInfo.data(),
-    });
-  } catch (e) {
-    next(e);
-  }
+  if (!user && !user.id) next(new Error('Bad request'));
+  res.json({ data: user });
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   const { user, body } = req;
-  if (!user || !body) next(new Error('Bad request'));
+  if (!body) next(new Error('Bad request'));
   try {
-    const userInfo = await db.collection('users').doc(user.uid).get();
-    if (userInfo && userInfo.data()) {
-      res.json({ data: userInfo.data() });
-    } else {
+    if(user.id) {
+      res.json({ data: user });
+    }else{
       Object.assign(body, {
+        uid: user.uid,
         phone_number: user.phone_number,
       });
       await db.collection('users')
-        .doc(user.uid)
-        .update(body);
+        .doc()
+        .set(body, { merge: true });
+      console.log("BODY", body)
       res.json({ data: body });
     }
   } catch (e) {
@@ -51,37 +45,26 @@ router.post('/', async (req, res, next) => {
 
 router.post('/upload', async (req, res, next) => {
   const { files, user } = req;
-  const url = await uploadFile(files[0], next);
+  const profile_picture = await uploadFile(files[0], next);
+  if(!user.id) Object.assign(user, await getUser(user));
+  if(user.profile_picture) deleteFile(user.profile_picture.ref);
   await db.collection('users')
-    .doc(user.uid)
+    .doc(user.id)
     .update({
-      profile_picture: url[0],
+      profile_picture,
     });
-  res.json({ data: { profile_picture: url[0] } });
+  res.json({ data: { profile_picture } });
 });
 
 router.put('/', async (req, res, next) => {
   const { user, body } = req;
-  if (!user || !body) next(new Error('Bad request'));
+  if (!body) next(new Error('Bad request'));
   try {
+    if(!user.id) user.id = await getUser(user).id;
     await db.collection('users')
-      .doc(user.uid)
-      .set(body, { merge: true });
+      .doc(user.id)
+      .update(body);
     res.json({ data: body });
-  } catch (e) {
-    next(e);
-  }
-});
-
-router.delete('/', async (req, res, next) => {
-  const { user } = req;
-  if (!user) next(new Error('Bad request'));
-  try {
-    await db.collection('users')
-      .doc(user.uid)
-      .get()
-      .delete();
-    res.json({ data: {} });
   } catch (e) {
     next(e);
   }
