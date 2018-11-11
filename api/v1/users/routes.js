@@ -1,5 +1,5 @@
-import { Router } from 'express';
-import { db, uploadFile, getUser, deleteFile } from '../../../lib/firebase';
+const { Router } = require('express');
+const { db, uploadFile, getUser, deleteFile } = require('../../../lib/firebase');
 
 const router = Router();
 
@@ -70,4 +70,4 @@ router.put('/', async (req, res, next) => {
   }
 });
 
-export default router;
+module.exports = router;

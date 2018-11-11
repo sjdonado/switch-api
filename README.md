@@ -1,8 +1,8 @@
 # Setup
 ```
-    nvm install 6.11
-    yarn global add firebase-tools
-    yarn global add @google-cloud/functions-emulator
+    nvm use 8.11
+    curl https://sdk.cloud.google.com | bash
+    npm install -g firebase-tools @google-cloud/functions-emulator
     gcloud auth application-default login
 ```
 # Setup server
@@ -15,18 +15,14 @@ switch-dev-smartrends@appspot.gserviceaccount.com // App Engine default service 
 
 # Local deploy
 ```
-    yarn run local-deploy
-```
-# Build and deploy
-```
-    yarn build && yarn deploy
+    npm run local-deploy
 ```
 # Debug
 ```
     functions start
-    yarn run build && yarn run debug
+    npm run debug
 ```
 # Logs
 ```
-    functions logs read switchDev
+    npm run logs
 ```

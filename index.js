@@ -1,4 +1,4 @@
-import app from './app';
+const app = require('./app');
 
 function App(req, res) {
   if (!req.url) {
@@ -8,5 +8,4 @@ function App(req, res) {
   return app(req, res);
 }
 
-export const switchDev = App;
-export default switchDev;
+module.exports.switchDev = App;

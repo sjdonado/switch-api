@@ -1,11 +1,11 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import methodOverride from 'method-override';
-import fileParser from 'express-multipart-file-parser';
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const fileParser = require('express-multipart-file-parser');
 
-import apiV1 from './api/v1';
-import { authentication } from './lib/auth';
+const apiV1 = require('./api/v1');
+const { authentication } = require('./lib/auth');
 
 const app = express();
 
@@ -54,4 +54,4 @@ app.use((err, req, res) => {
   });
 });
 
-export default app;
+module.exports = app;
