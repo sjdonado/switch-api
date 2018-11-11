@@ -25,9 +25,9 @@ router.post('/signup', async (req, res, next) => {
   const { user, body } = req;
   if (!body) next(new Error('Bad request'));
   try {
-    if(user.id) {
+    if (user.id) {
       res.json({ data: user });
-    }else{
+    } else {
       Object.assign(body, {
         uid: user.uid,
         phone_number: user.phone_number,
@@ -35,7 +35,6 @@ router.post('/signup', async (req, res, next) => {
       await db.collection('users')
         .doc()
         .set(body, { merge: true });
-      console.log("BODY", body)
       res.json({ data: body });
     }
   } catch (e) {
@@ -44,23 +43,27 @@ router.post('/signup', async (req, res, next) => {
 });
 
 router.post('/upload', async (req, res, next) => {
-  const { files, user } = req;
-  const profile_picture = await uploadFile(files[0], next);
-  if(!user.id) Object.assign(user, await getUser(user));
-  if(user.profile_picture) deleteFile(user.profile_picture.ref);
-  await db.collection('users')
-    .doc(user.id)
-    .update({
-      profile_picture,
-    });
-  res.json({ data: { profile_picture } });
+  try {
+    const { files, user } = req;
+    const profilePicture = await uploadFile(files[0], next);
+    if (!user.id) Object.assign(user, await getUser(user));
+    if (user.profile_picture) deleteFile(user.profile_picture.ref);
+    await db.collection('users')
+      .doc(user.id)
+      .update({
+        profile_picture: profilePicture,
+      });
+    res.json({ data: { profilePicture } });
+  } catch (e) {
+    next(e);
+  }
 });
 
 router.put('/', async (req, res, next) => {
   const { user, body } = req;
   if (!body) next(new Error('Bad request'));
   try {
-    if(!user.id) user.id = await getUser(user).id;
+    if (!user.id) user.id = await getUser(user).id;
     await db.collection('users')
       .doc(user.id)
       .update(body);
