@@ -15,7 +15,7 @@ switch-dev-smartrends@appspot.gserviceaccount.com // App Engine default service 
 
 # Local deploy
 ```
-    npm run local-deploy
+    npm start
 ```
 # Debug
 ```

@@ -6,9 +6,9 @@
   "scripts": {
     "debug": "functions inspect switchDev",
     "deploy": "gcloud functions deploy switchDev --runtime nodejs8 --trigger-http",
-    "local-deploy": "functions deploy switchDev --trigger-http",
-    "logs": "functions logs read switchDev",
-    "prelocal-deploy": "functions start"
+    "logs": "functions logs read switchDev -l 1000",
+    "prestart": "functions start",
+    "start": "functions deploy switchDev --trigger-http"
   },
   "author": "sjdonado",
   "license": "ISC",

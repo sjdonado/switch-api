@@ -1,5 +1,10 @@
 const { Router } = require('express');
-const { db, uploadFile, getUser, deleteFile } = require('../../../lib/firebase');
+const {
+  db,
+  uploadFile,
+  getUser,
+  deleteFile,
+} = require('../../../lib/firebase');
 
 const router = Router();
 
@@ -46,14 +51,17 @@ router.post('/upload', async (req, res, next) => {
   try {
     const { files, user } = req;
     const profilePicture = await uploadFile(files[0], next);
-    if (!user.id) Object.assign(user, await getUser(user));
-    if (user.profile_picture) deleteFile(user.profile_picture.ref);
+    if (profilePicture instanceof Error) next(profilePicture);
+    const userInfo = await getUser(user);
+    if (userInfo instanceof Error) next(userInfo);
+    if (!user.id) Object.assign(user, userInfo);
+    if (user.profile_picture) await deleteFile(user.profile_picture.ref);
     await db.collection('users')
       .doc(user.id)
       .update({
         profile_picture: profilePicture,
       });
-    res.json({ data: { profilePicture } });
+    res.json({ data: { profile_picture: profilePicture } });
   } catch (e) {
     next(e);
   }
