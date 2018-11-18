@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const router = Router();
 const controller = require('./controller');
-const { isACompany } = require('../../../lib/auth');
+const { isACompany } = require('../lib/auth');
 
 // router
 //   .param('id', controller.id);

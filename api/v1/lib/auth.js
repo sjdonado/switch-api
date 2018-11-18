@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const { getOrCreateUser } = require('./firebase');
+const { getOrCreateUser } = require('../users/model');
 
 module.exports.authentication = async (req, res, next) => {
   if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) next();

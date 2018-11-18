@@ -1,10 +1,11 @@
 const {
   db,
   uploadFile,
-  getOrCreateUser,
   deleteFile,
   sendNotification,
-} = require('../../../lib/firebase');
+} = require('../lib/firebase');
+
+const { getOrCreateUser } = require('../users/model');
 
 module.exports.all = async (req, res, next) => {
   try {
@@ -32,7 +33,7 @@ module.exports.upload = async (req, res, next) => {
     const userInfo = await getOrCreateUser(user);
     if (userInfo instanceof Error) next(userInfo);
     if (!user.id) Object.assign(user, userInfo);
-    if (user.profile_picture) await deleteFile(user.profile_picture.ref);
+    if (user.profilePicture && user.profilePicture.ref) await deleteFile(user.profilePicture.ref);
     await db.collection('users')
       .doc(user.id)
       .update({
