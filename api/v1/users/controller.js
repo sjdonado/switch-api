@@ -1,15 +1,14 @@
 const {
-  db,
   uploadFile,
   deleteFile,
-  sendNotification,
 } = require('../lib/firebase');
 
-const { getOrCreateUser } = require('../users/model');
+const { getOrCreateUser, Model } = require('../users/model');
+const { updateOrCreateLocation } = require('../places/model');
 
 module.exports.all = async (req, res, next) => {
   try {
-    const usersSnapshot = await db.collection('users').get();
+    const usersSnapshot = await Model.get();
     res.json(usersSnapshot.docs.map(doc => ({
       id: doc.id,
       data: doc.data(),
@@ -34,7 +33,7 @@ module.exports.upload = async (req, res, next) => {
     if (userInfo instanceof Error) next(userInfo);
     if (!user.id) Object.assign(user, userInfo);
     if (user.profilePicture && user.profilePicture.ref) await deleteFile(user.profilePicture.ref);
-    await db.collection('users')
+    await Model
       .doc(user.id)
       .update({
         profilePicture,
@@ -45,27 +44,22 @@ module.exports.upload = async (req, res, next) => {
   }
 };
 
+module.exports.getPlaces = async (req, res, next) => {
+  const { user, body } = req;
+};
+
 module.exports.update = async (req, res, next) => {
   const { user, body } = req;
   if (!body) next(new Error('Bad request'));
   try {
-    if (!user.id) user.id = await getOrCreateUser(user).id;
-    await db.collection('users')
+    const { id } = await getOrCreateUser(user);
+    if (!user.id) user.id = id;
+    if (body.location) await updateOrCreateLocation(user.uid, body.location);
+    await Model
       .doc(user.id)
       .update(body);
     res.json({ data: body });
   } catch (e) {
     next(e);
   }
-};
-
-module.exports.sendNotification = (req, res, next) => {
-  const { body } = req;
-  sendNotification('switch', body)
-    .then((response) => {
-      res.json({ data: { response } });
-    })
-    .catch((e) => {
-      next(e);
-    });
 };

@@ -5,26 +5,31 @@ const profilePicture = {
   ref: null,
 };
 
+const Model = db.collection('users');
+
+function getUser(uid) {
+  return Model
+    .where('uid', '==', uid)
+    .get();
+}
+
 module.exports.getOrCreateUser = async (user) => {
-  let response;
   try {
-    const userInfo = await db.collection('users')
-      .where('uid', '==', user.uid)
-      .get();
-    if (userInfo.empty) {
+    const userResponse = await getUser(user.uid);
+    if (userResponse.empty) {
       const body = {
         uid: user.uid,
         phoneNumber: user.phone_number,
         profilePicture,
       };
-      const reference = await db.collection('users')
-        .add(body);
-      response = Object.assign({ id: reference.id }, body);
-    } else {
-      response = Object.assign({ id: userInfo.docs[0].id }, userInfo.docs[0].data());
+      const reference = await Model.add(body);
+      return Object.assign({ id: reference.id }, body);
     }
-    return response;
+    return Object.assign({ id: userResponse.docs[0].id }, userResponse.docs[0].data());
   } catch (e) {
     return e;
   }
 };
+
+module.exports.getUser = getUser;
+module.exports.Model = Model;

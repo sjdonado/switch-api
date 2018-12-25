@@ -20,7 +20,9 @@
     "express": "^4.16.3",
     "express-multipart-file-parser": "^0.1.2",
     "fast-crc32c": "^1.0.4",
+    "firebase": "^5.7.1",
     "firebase-admin": "^5.12.1",
+    "geofire": "^4.1.2",
     "method-override": "^2.3.10",
     "tmp": "^0.0.33"
   },

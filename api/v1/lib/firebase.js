@@ -1,16 +1,22 @@
 const admin = require('firebase-admin');
+const GeoFire = require('geofire');
 const { tmpFile } = require('./utils');
 const serviceAccount = require('../../../service_account.json');
 
+const PROJECT_NAME = 'switch-dev-smartrends';
+
 admin.initializeApp({
+  databaseURL: `https://${PROJECT_NAME}.firebaseio.com`,
   credential: admin.credential.cert(serviceAccount),
 });
 
-const BUCKET_NAME = 'switch-dev-smartrends';
-const storage = admin.storage().bucket(`gs://${BUCKET_NAME}.appspot.com`);
+const storage = admin.storage().bucket(`gs://${PROJECT_NAME}.appspot.com`);
 
 const db = admin.firestore();
 db.settings({ timestampsInSnapshots: true });
+
+const firebase = admin.database().ref();
+const geoFire = new GeoFire(firebase);
 
 module.exports.uploadFile = async function uploadFile(file) {
   const fileName = `${new Date().getTime()}.${file.mimetype.split('/')[1]}`;
@@ -41,4 +47,8 @@ module.exports.sendNotification = (topic, data) => {
   return admin.messaging().send(message);
 };
 
-module.exports.db = db;
+module.exports = {
+  db,
+  firebase,
+  geoFire,
+};

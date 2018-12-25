@@ -16,7 +16,7 @@ module.exports.authentication = async (req, res, next) => {
 };
 
 module.exports.isACompany = async function authorization(req, res, next) {
-  if (req.user.userType) {
+  if (req.user.role) {
     next();
   } else {
     next(new Error('Unauthorized'));
