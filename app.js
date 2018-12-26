@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const fileParser = require('express-multipart-file-parser');
 
 const apiV1 = require('./api/v1');
-const { authentication } = require('./api/v1/lib/auth');
+const { authentication } = require('./lib/auth');
 
 const app = express();
 

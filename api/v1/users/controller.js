@@ -1,7 +1,7 @@
 const {
   uploadFile,
   deleteFile,
-} = require('../lib/firebase');
+} = require('../../../lib/firebase');
 
 const { getOrCreateUser, Model } = require('../users/model');
 const { updateOrCreateLocation } = require('../places/model');
