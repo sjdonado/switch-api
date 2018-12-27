@@ -1,4 +1,4 @@
-const { db, geoFire } = require('../../../lib/firebase');
+const { db, geoFire, GeoFire } = require('../../../lib/firebase');
 const user = require('../users/model');
 
 const Model = db.collection('places');
@@ -21,12 +21,16 @@ function updateOrCreateLocation(userId, location) {
 
 async function getPlacesByRadius(userLoc, radius) {
   const places = await Model.get();
-  return places.docs.map(async (place) => {
+  return Promise.all(places.docs.map(async (place) => {
     const placeUser = await user.Model.doc(place.data().userId).get();
     const { location } = placeUser.data();
-    const distance = geoFire.distance([userLoc.lat, userLoc.lng], [location.lat, location.lng]);
-    return distance <= radius;
-  });
+    const distance = GeoFire.distance(
+      [userLoc.lat, userLoc.lng],
+      [location.lat, location.lng],
+    );
+    if (distance <= radius) return Object.assign(placeUser.data(), { distance });
+    return null;
+  })).then(res => res.filter(elem => elem));
 }
 
 module.exports.update = async (userId, body) => {

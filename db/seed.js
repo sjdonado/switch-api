@@ -4,12 +4,12 @@ const place = require('../api/v1/places/model');
 
 const locations = [
   {
-    lat: 37.42892081,
-    lng: -122.08273889,
+    lat: 37.41864193,
+    lng: -122.08566434,
   },
   {
-    lat: 37.43297251,
-    lng: -122.11925736,
+    lat: 37.41866923,
+    lng: -122.08904049,
   },
 ];
 
@@ -26,14 +26,8 @@ const locations = [
     location: locations[1],
   });
 
-
-  const place1 = await place.getOrCreatePlace({
-    userId: user1.id,
-  });
-
-  const place2 = await place.getOrCreatePlace({
-    userId: user2.id,
-  });
+  const place1 = await place.getOrCreatePlace(user1.id);
+  const place2 = await place.getOrCreatePlace(user2.id);
 
   const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);
   const geoFire2 = await geoFire.set(user2.id, [locations[1].lat, locations[1].lng]);
@@ -46,5 +40,8 @@ const locations = [
   // });
 
   console.log('RESULT', user1.id, user2.id, place1.id, place2.id);
+
+  // const response = await place.getPlacesByRadius({ lat: 37.42199750000001, lng: -122.08399609374999 }, 10 / 1000);
+  // console.log(response);
   process.exit();
 })();

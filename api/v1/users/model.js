@@ -22,8 +22,8 @@ module.exports.getOrCreateUser = async (user) => {
         phoneNumber: user.phone_number,
         profilePicture,
         radius: 10,
-        location: user.location,
       };
+      if (user.location) Object.assign(body, { location: user.location });
       const reference = await Model.add(body);
       return Object.assign({ id: reference.id }, body);
     }
