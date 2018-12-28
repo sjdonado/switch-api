@@ -40,10 +40,11 @@ module.exports.update = async (req, res, next) => {
 };
 
 module.exports.search = async (req, res, next) => {
-  const { user } = req;
-  const { location, radius } = user;
+  const { user, query } = req;
+  const { location, id } = user;
+  const { radius } = query;
   try {
-    const data = await getPlacesByRadius(location, radius / 1000);
+    const data = await getPlacesByRadius(id, location, radius);
     res.json({ data });
   } catch (e) {
     next(e);

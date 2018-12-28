@@ -19,15 +19,16 @@ function updateOrCreateLocation(userId, location) {
   return geoFire.set(userId, [location.lat, location.lng]);
 }
 
-async function getPlacesByRadius(userLoc, radius) {
+async function getPlacesByRadius(userId, userLoc, radius) {
   const places = await Model.get();
+  await user.Model.doc(userId).update({ radius });
   return Promise.all(places.docs.map(async (place) => {
     const placeUser = await user.Model.doc(place.data().userId).get();
     const { location } = placeUser.data();
     const distance = GeoFire.distance(
       [userLoc.lat, userLoc.lng],
       [location.lat, location.lng],
-    );
+    ) * 1000;
     if (distance <= radius) return Object.assign(placeUser.data(), { distance });
     return null;
   })).then(res => res.filter(elem => elem));
