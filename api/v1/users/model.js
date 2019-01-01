@@ -1,37 +1,46 @@
 const { db } = require('../../../lib/firebase');
-
-const profilePicture = {
-  url: 'https://firebasestorage.googleapis.com/v0/b/switch-dev-smartrends.appspot.com/o/default_images%2Fblank-profile-picture-973460_640.png?alt=media&token=94e82a08-98cd-4bd6-8f11-0ced986562a8',
-  ref: null,
-};
+const { profilePicture } = require('../../../lib/utils');
 
 const Model = db.collection('users');
 
-function getUser(uid) {
-  return Model
-    .where('uid', '==', uid)
-    .get();
-}
+const getUser = async (uid) => {
+  const userResponse = await Model.where('uid', '==', uid).get();
+  if (userResponse.empty) return null;
+  return Object.assign({ id: userResponse.docs[0].id }, userResponse.docs[0].data());
+};
 
-module.exports.getOrCreateUser = async (user) => {
+const createUser = async (body) => {
+  const reference = await Model.add(body);
+  return Object.assign({ id: reference.id }, body);
+};
+
+const createEmptyUser = async (user) => {
+  const body = {
+    uid: user.uid,
+    phoneNumber: user.phone_number,
+    profilePicture,
+    radius: 100,
+  };
+  const reference = await createUser(body);
+  return Object.assign({ id: reference.id }, body);
+};
+
+const getOrCreateUser = async (user) => {
   try {
     const userResponse = await getUser(user.uid);
-    if (userResponse.empty) {
-      const body = {
-        uid: user.uid,
-        phoneNumber: user.phone_number,
-        profilePicture,
-        radius: 10,
-      };
-      if (user.location) Object.assign(body, { location: user.location });
-      const reference = await Model.add(body);
-      return Object.assign({ id: reference.id }, body);
+    if (!userResponse) {
+      return createEmptyUser(user);
     }
-    return Object.assign({ id: userResponse.docs[0].id }, userResponse.docs[0].data());
+    return userResponse;
   } catch (e) {
     return e;
   }
 };
 
-module.exports.getUser = getUser;
-module.exports.Model = Model;
+module.exports = {
+  Model,
+  getUser,
+  getOrCreateUser,
+  createEmptyUser,
+  createUser,
+};

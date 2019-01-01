@@ -3,8 +3,8 @@ const {
   deleteFile,
 } = require('../../../lib/firebase');
 
-const { getOrCreateUser, Model } = require('../users/model');
-const { updateOrCreateLocation } = require('../places/model');
+const { Model, getUser, getOrCreateUser } = require('../users/model');
+const { getOrCreatePlace } = require('../places/model');
 
 module.exports.all = async (req, res, next) => {
   try {
@@ -29,12 +29,11 @@ module.exports.upload = async (req, res, next) => {
     const { files, user } = req;
     const profilePicture = await uploadFile(files[0], next);
     if (profilePicture instanceof Error) next(profilePicture);
-    const userInfo = await getOrCreateUser(user);
-    if (userInfo instanceof Error) next(userInfo);
-    if (!user.id) Object.assign(user, userInfo);
-    if (user.profilePicture && user.profilePicture.ref) await deleteFile(user.profilePicture.ref);
+    const userInfo = await getUser(user.uid);
+    if (!userInfo) next(userInfo);
+    if (userInfo.profilePicture.ref) await deleteFile(userInfo.profilePicture.ref);
     await Model
-      .doc(user.id)
+      .doc(userInfo.id)
       .update({
         profilePicture,
       });
@@ -44,19 +43,17 @@ module.exports.upload = async (req, res, next) => {
   }
 };
 
-module.exports.getPlaces = async (req, res, next) => {
-  const { user, body } = req;
-};
-
 module.exports.update = async (req, res, next) => {
   const { user, body } = req;
   if (!body) next(new Error('Bad request'));
   try {
-    const { id } = await getOrCreateUser(user);
-    if (!user.id) user.id = id;
-    if (body.location) await updateOrCreateLocation(user.uid, body.location);
+    const userResponse = await getOrCreateUser(user, next);
+    if (userResponse instanceof Error) next(userResponse);
+    const { id } = userResponse;
+    if (body.role) await getOrCreatePlace(id);
+    // if (body.location) await updateOrCreateLocation(user.uid, body.location);
     await Model
-      .doc(user.id)
+      .doc(id)
       .update(body);
     res.json({ data: body });
   } catch (e) {
