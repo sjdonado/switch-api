@@ -50,7 +50,9 @@ module.exports.update = async (req, res, next) => {
     const userResponse = await getOrCreateUser(user, next);
     if (userResponse instanceof Error) next(userResponse);
     const { id } = userResponse;
-    if (body.role) await getOrCreatePlace(id);
+    if (body.role) {
+      await getOrCreatePlace(id);
+    }
     // if (body.location) await updateOrCreateLocation(user.uid, body.location);
     await Model
       .doc(id)

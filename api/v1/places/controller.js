@@ -2,10 +2,10 @@ const {
   sendNotification,
 } = require('../../../lib/firebase');
 const {
-  Nodel,
   update,
   getOrCreatePlace,
   getPlacesByRadius,
+  starredPlaces,
 } = require('./model');
 
 module.exports.sendNotification = (req, res, next) => {
@@ -45,6 +45,17 @@ module.exports.search = async (req, res, next) => {
   const { radius } = query;
   try {
     const data = await getPlacesByRadius(id, location, radius);
+    res.json({ data });
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports.starredPlaces = async (req, res, next) => {
+  const { user } = req;
+  const { id, location } = user;
+  try {
+    const data = await starredPlaces(id, location);
     res.json({ data });
   } catch (e) {
     next(e);

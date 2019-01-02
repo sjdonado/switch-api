@@ -1,5 +1,6 @@
-const { db, geoFire, GeoFire } = require('../../../lib/firebase');
-const user = require('../users/model');
+const { db, geoFire, getDistance } = require('../../../lib/firebase');
+const User = require('../users/model');
+const UsersPlaces = require('../usersPlaces/model');
 
 const Model = db.collection('places');
 
@@ -19,24 +20,39 @@ function updateOrCreateLocation(userId, location) {
 }
 
 const getPlacesByRadius = async (userId, userLoc, radius) => {
-  const places = await Model.get();
-  await user.Model.doc(userId).update({ radius });
+  await User.Model.doc(userId).update({ radius });
+  const availablePlaces = [];
+  const rejectedPlaces = await UsersPlaces.getUserPlaces(userId);
+  await Model.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (!rejectedPlaces.some(e => e.placeId === doc.id)) {
+        availablePlaces.push(Object.assign({ id: doc.id }, doc.data()));
+      }
+    });
+  });
   if (userLoc.lat && userLoc.lng) {
-    return Promise.all(places.docs.map(async (place) => {
-      const placeUser = await user.Model.doc(place.data().userId).get();
+    return Promise.all(availablePlaces.map(async (place) => {
+      const placeUser = await User.Model.doc(place.userId).get();
       const placeUserData = placeUser.data();
       if (placeUserData) {
         const { location } = placeUserData;
-        const distance = GeoFire.distance(
-          [userLoc.lat, userLoc.lng],
-          [location.lat, location.lng],
-        ) * 1000;
-        if (distance <= radius) return Object.assign(placeUserData, { distance });
+        const distance = getDistance(userLoc, location);
+        if (distance <= radius) return Object.assign(placeUserData, { distance, id: place.id });
       }
       return null;
     })).then(res => res.filter(elem => elem));
   }
   return [];
+};
+
+const starredPlaces = async (userId, userLoc) => {
+  const userPlaces = await UsersPlaces.getUsersPlacesByType(userId, UsersPlaces.types.accepted);
+  return Promise.all(userPlaces.map(async (userPlace) => {
+    const place = await Model.doc(userPlace.placeId).get();
+    const user = await User.Model.doc(place.data().userId).get();
+    const distance = getDistance(userLoc, user.data().location);
+    return Object.assign({ id: place.id, distance }, user.data(), place.data());
+  }));
 };
 
 const update = async (userId, body) => {
@@ -55,4 +71,5 @@ module.exports = {
   updateOrCreateLocation,
   getPlacesByRadius,
   update,
+  starredPlaces,
 };

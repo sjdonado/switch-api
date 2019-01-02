@@ -1,8 +1,9 @@
 const { db, geoFire } = require('../lib/firebase');
 const { profilePicture } = require('../lib/utils');
 
-const user = require('../api/v1/users/model');
-const place = require('../api/v1/places/model');
+const User = require('../api/v1/users/model');
+const Place = require('../api/v1/places/model');
+const UsersPlaces = require('../api/v1/usersPlaces/model');
 
 const locations = [
   {
@@ -68,7 +69,7 @@ const locations = [
 ];
 
 (async () => {
-  const user1 = await user.createUser({
+  const user1 = await User.createUser({
     uid: 'aiNOzljaWTWWAIKsP6ltuyZtyTX2',
     name: 'Efecty Silencio',
     nit: 123456788,
@@ -79,7 +80,7 @@ const locations = [
     profilePicture,
   });
 
-  const user2 = await user.createUser({
+  const user2 = await User.createUser({
     uid: 'NNUqp606bgNyBemPSbBbZKLZeow1',
     name: 'CC Americano',
     nit: 123456778,
@@ -90,7 +91,7 @@ const locations = [
     profilePicture,
   });
 
-  const user3 = await user.createUser({
+  const user3 = await User.createUser({
     uid: '3',
     name: 'Olimpica Silencio',
     nit: 123456768,
@@ -101,7 +102,7 @@ const locations = [
     profilePicture,
   });
 
-  const user4 = await user.createUser({
+  const user4 = await User.createUser({
     uid: '4',
     name: 'Parque las Mercedes',
     nit: 123456758,
@@ -113,22 +114,24 @@ const locations = [
   });
 
 
-  const place1 = await place.getOrCreatePlace(user1.id);
-  const place2 = await place.getOrCreatePlace(user2.id);
-  const place3 = await place.getOrCreatePlace(user3.id);
-  const place4 = await place.getOrCreatePlace(user4.id);
+  const place1 = await Place.getOrCreatePlace(user1.id);
+  const place2 = await Place.getOrCreatePlace(user2.id);
+  const place3 = await Place.getOrCreatePlace(user3.id);
+  const place4 = await Place.getOrCreatePlace(user4.id);
 
-  // const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);
-  // const geoFire2 = await geoFire.set(user2.id, [locations[1].lat, locations[1].lng]);
+  const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);
+  const geoFire2 = await geoFire.set(user2.id, [locations[1].lat, locations[1].lng]);
 
-  // geoFire.query({
-  //   center: [37.42199750000001, -122.08399609374999],
-  //   radius: 100,
-  // }).on('key_entered', (key, location, distance) => {
-  //   console.log(key, location, distance);
-  // });
+  geoFire.query({
+    center: [37.42199750000001, -122.08399609374999],
+    radius: 100,
+  }).on('key_entered', (key, location, distance) => {
+    console.log(key, location, distance);
+  });
 
   console.log('RESULT', user1.id, user2.id, place1.id, place2.id);
+
+  const response = await UsersPlaces.rejectedPlaces('ELP5rre9W5T2cy743aIQ');
 
   process.exit();
 })();
