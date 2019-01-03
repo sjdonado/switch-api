@@ -4,12 +4,12 @@ const UsersPlaces = require('../usersPlaces/model');
 
 const Model = db.collection('places');
 
-const getOrCreatePlace = async (userId) => {
+const getOrCreatePlace = async (userId, body) => {
   const placeRespone = await Model
     .where('userId', '==', userId)
     .get();
   if (placeRespone.empty) {
-    const placeResponse = await Model.add({ userId });
+    const placeResponse = await Model.add(Object.assign({ userId }, body));
     return { id: placeResponse.id };
   }
   return Object.assign({ id: placeRespone.docs[0].id }, placeRespone.docs[0].data());
@@ -37,7 +37,9 @@ const getPlacesByRadius = async (userId, userLoc, radius) => {
       if (placeUserData) {
         const { location } = placeUserData;
         const distance = getDistance(userLoc, location);
-        if (distance <= radius) return Object.assign(placeUserData, { distance, id: place.id });
+        if (distance <= radius) {
+          return Object.assign(placeUserData, { distance, id: place.id }, place);
+        }
       }
       return null;
     })).then(res => res.filter(elem => elem));

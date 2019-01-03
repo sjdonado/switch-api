@@ -51,7 +51,10 @@ module.exports.update = async (req, res, next) => {
     if (userResponse instanceof Error) next(userResponse);
     const { id } = userResponse;
     if (body.role) {
-      await getOrCreatePlace(id);
+      const { nit, signboard } = body;
+      await getOrCreatePlace(id, { nit, signboard });
+      delete body.nit;
+      delete body.signboard;
     }
     // if (body.location) await updateOrCreateLocation(user.uid, body.location);
     await Model
