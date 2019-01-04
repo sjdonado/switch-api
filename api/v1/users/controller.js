@@ -4,7 +4,7 @@ const {
 } = require('../../../lib/firebase');
 
 const { Model, getUser, getOrCreateUser } = require('../users/model');
-const { getOrCreatePlace } = require('../places/model');
+const { createOrUpdatePlace } = require('../places/model');
 
 module.exports.all = async (req, res, next) => {
   try {
@@ -52,7 +52,7 @@ module.exports.update = async (req, res, next) => {
     const { id } = userResponse;
     if (body.role) {
       const { nit, signboard } = body;
-      await getOrCreatePlace(id, { nit, signboard });
+      await createOrUpdatePlace(id, { nit, signboard });
       delete body.nit;
       delete body.signboard;
     }

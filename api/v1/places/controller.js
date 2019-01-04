@@ -2,8 +2,8 @@ const {
   sendNotification,
 } = require('../../../lib/firebase');
 const {
-  update,
-  getOrCreatePlace,
+  updatePlace,
+  getPlace,
   getPlacesByRadius,
   starredPlaces,
 } = require('./model');
@@ -22,7 +22,7 @@ module.exports.sendNotification = (req, res, next) => {
 module.exports.get = async (req, res, next) => {
   const { user } = req;
   try {
-    const data = await getOrCreatePlace(user.id);
+    const data = await getPlace(user);
     res.json({ data });
   } catch (e) {
     next(e);
@@ -32,7 +32,7 @@ module.exports.get = async (req, res, next) => {
 module.exports.update = async (req, res, next) => {
   const { user, body } = req;
   try {
-    const data = await update(user.id, body);
+    const data = await updatePlace(user.id, body);
     res.json({ data });
   } catch (e) {
     next(e);
