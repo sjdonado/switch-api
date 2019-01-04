@@ -27,7 +27,7 @@ module.exports.read = async (req, res, next) => {
 module.exports.upload = async (req, res, next) => {
   try {
     const { files, user } = req;
-    const profilePicture = await uploadFile(files[0], next);
+    const profilePicture = await uploadFile('profile_pictures/', files[0], next);
     if (profilePicture instanceof Error) next(profilePicture);
     const userInfo = await getUser(user.uid);
     if (!userInfo) next(userInfo);

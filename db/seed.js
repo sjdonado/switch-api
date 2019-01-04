@@ -1,5 +1,5 @@
 const { db, geoFire } = require('../lib/firebase');
-const { profilePicture } = require('../lib/utils');
+const { defaultProfilePicture, emptyImg } = require('../lib/utils');
 
 const User = require('../api/v1/users/model');
 const Place = require('../api/v1/places/model');
@@ -75,7 +75,7 @@ const locations = [
     phoneNumber: '+573126857641',
     location: locations[0],
     role: true,
-    profilePicture,
+    profilePicture: defaultProfilePicture,
   });
 
   const user2 = await User.createUser({
@@ -84,7 +84,7 @@ const locations = [
     phoneNumber: '+573215240860',
     location: locations[1],
     role: true,
-    profilePicture,
+    profilePicture: defaultProfilePicture,
   });
 
   const user3 = await User.createUser({
@@ -93,7 +93,7 @@ const locations = [
     phoneNumber: '+573215240861',
     location: locations[2],
     role: true,
-    profilePicture,
+    profilePicture: defaultProfilePicture,
   });
 
   const user4 = await User.createUser({
@@ -102,14 +102,14 @@ const locations = [
     phoneNumber: '+573215240861',
     location: locations[3],
     role: true,
-    profilePicture,
+    profilePicture: defaultProfilePicture,
   });
 
 
-  const place1 = await Place.getOrCreatePlace(user1.id, { nit: 123456781, signboard: 'Efecty test, test, test' });
-  const place2 = await Place.getOrCreatePlace(user2.id, { nit: 123456782, signboard: 'Americano test, test, test' });
-  const place3 = await Place.getOrCreatePlace(user3.id, { nit: 123456783, signboard: 'Olimpica test, test, test' });
-  const place4 = await Place.getOrCreatePlace(user4.id, { nit: 123456784, signboard: 'Mercedes test, test, test' });
+  const place1 = await Place.createOrUpdatePlace(user1.id, { nit: 123456781, signboard: 'Efecty test, test, test', images: [emptyImg, emptyImg, emptyImg] });
+  const place2 = await Place.createOrUpdatePlace(user2.id, { nit: 123456782, signboard: 'Americano test, test, test', images: [emptyImg, emptyImg, emptyImg] });
+  const place3 = await Place.createOrUpdatePlace(user3.id, { nit: 123456783, signboard: 'Olimpica test, test, test', images: [emptyImg, emptyImg, emptyImg] });
+  const place4 = await Place.createOrUpdatePlace(user4.id, { nit: 123456784, signboard: 'Mercedes test, test, test', images: [emptyImg, emptyImg, emptyImg] });
 
   // const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);
   // const geoFire2 = await geoFire.set(user2.id, [locations[1].lat, locations[1].lng]);

@@ -1,4 +1,6 @@
 const { db, geoFire, getDistance } = require('../../../lib/firebase');
+const { emptyImg } = require('../../../lib/utils');
+
 const User = require('../users/model');
 const UsersPlaces = require('../usersPlaces/model');
 
@@ -11,19 +13,32 @@ const getResponse = async (user, place) => {
     profilePicture,
     location,
   } = user;
-  const { id, nit, signboard } = place;
+  const {
+    id,
+    nit,
+    signboard,
+    images,
+  } = place;
   return {
     id,
     name,
     phoneNumber,
     profilePicture,
+    images,
     location,
     nit,
     signboard,
   };
 };
 
-const getPlace = async (user) => {
+const getPlace = async (userId) => {
+  const data = await Model
+    .where('userId', '==', userId)
+    .get();
+  return Object.assign({ id: data.docs[0].id }, data.docs[0].data());
+};
+
+const getPlaceMergedWithUser = async (user) => {
   const placeRespone = await Model
     .where('userId', '==', user.id)
     .get();
@@ -33,11 +48,12 @@ const getPlace = async (user) => {
   );
 };
 
-const update = async (userId, body) => {
+const updatePlace = async (userId, body) => {
+  const place = await getPlace(userId);
   await Model
-    .where('userId', '==', userId)
-    .update(body);
-  return body;
+    .doc(place.id)
+    .update(Object.assign(place, body));
+  return Object.assign(place, body);
 };
 
 const createOrUpdatePlace = async (userId, body) => {
@@ -45,10 +61,13 @@ const createOrUpdatePlace = async (userId, body) => {
     .where('userId', '==', userId)
     .get();
   if (placeRespone.empty) {
-    const placeResponse = await Model.add(Object.assign({ userId }, body));
+    const placeResponse = await Model.add(Object.assign({
+      userId,
+      images: [emptyImg, emptyImg, emptyImg],
+    }, body));
     return { id: placeResponse.id };
   }
-  return update(userId, Object.assign(placeRespone.docs[0].data, body));
+  return updatePlace(userId, body);
 };
 
 function updateOrCreateLocation(userId, location) {
@@ -93,19 +112,13 @@ const starredPlaces = async (userId, userLoc) => {
   }));
 };
 
-const updatePlace = async (userId, body) => {
-  const place = await Model
-    .where('userId', '==', userId)
-    .get();
-  return update(userId, Object.assign(place.docs[0].data(), body));
-};
-
 module.exports = {
   Model,
   getPlace,
+  getPlaceMergedWithUser,
+  updatePlace,
   createOrUpdatePlace,
   updateOrCreateLocation,
   getPlacesByRadius,
-  updatePlace,
   starredPlaces,
 };

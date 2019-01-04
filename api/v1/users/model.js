@@ -1,5 +1,5 @@
 const { db } = require('../../../lib/firebase');
-const { profilePicture } = require('../../../lib/utils');
+const { defaultProfilePicture } = require('../../../lib/utils');
 
 const Model = db.collection('users');
 
@@ -18,7 +18,7 @@ const createEmptyUser = async (user) => {
   const body = {
     uid: user.uid,
     phoneNumber: user.phone_number,
-    profilePicture,
+    profilePicture: defaultProfilePicture,
     radius: 500,
   };
   const reference = await createUser(body);
