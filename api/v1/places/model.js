@@ -18,6 +18,8 @@ const getResponse = async (user, place) => {
     nit,
     signboard,
     images,
+    description,
+    category,
   } = place;
   return {
     id,
@@ -28,6 +30,8 @@ const getResponse = async (user, place) => {
     location,
     nit,
     signboard,
+    description,
+    category,
   };
 };
 
@@ -112,6 +116,21 @@ const starredPlaces = async (userId, userLoc) => {
   }));
 };
 
+const getPlaceParams = (body) => {
+  const {
+    nit,
+    signboard,
+    description,
+    category,
+  } = body;
+  return {
+    nit,
+    signboard,
+    description,
+    category,
+  };
+};
+
 module.exports = {
   Model,
   getPlace,
@@ -121,4 +140,5 @@ module.exports = {
   updateOrCreateLocation,
   getPlacesByRadius,
   starredPlaces,
+  getPlaceParams,
 };

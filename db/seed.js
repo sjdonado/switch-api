@@ -105,11 +105,36 @@ const locations = [
     profilePicture: defaultProfilePicture,
   });
 
+  const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac lectus nulla. Aliquam erat volutpat. Nunc non iaculis justo. Mauris nec neque volutpat, varius magna in, placerat odio. Mauris blandit facilisis lorem et facilisis. Duis ut urna vel neque rhoncus faucibus a et arcu. Etiam nisl arcu, ultrices volutpat tristique in, consequat quis tellus.';
 
-  const place1 = await Place.createOrUpdatePlace(user1.id, { nit: 123456781, signboard: 'Efecty test, test, test', images: [emptyImg, emptyImg, emptyImg] });
-  const place2 = await Place.createOrUpdatePlace(user2.id, { nit: 123456782, signboard: 'Americano test, test, test', images: [emptyImg, emptyImg, emptyImg] });
-  const place3 = await Place.createOrUpdatePlace(user3.id, { nit: 123456783, signboard: 'Olimpica test, test, test', images: [emptyImg, emptyImg, emptyImg] });
-  const place4 = await Place.createOrUpdatePlace(user4.id, { nit: 123456784, signboard: 'Mercedes test, test, test', images: [emptyImg, emptyImg, emptyImg] });
+  const place1 = await Place.createOrUpdatePlace(user1.id, {
+    nit: 123456781,
+    signboard: 'Efecty test, test, test',
+    images: [emptyImg, emptyImg, emptyImg],
+    description,
+    category: 'food',
+  });
+  const place2 = await Place.createOrUpdatePlace(user2.id, {
+    nit: 123456782,
+    signboard: 'Americano test, test, test',
+    images: [emptyImg, emptyImg, emptyImg],
+    description,
+    category: 'Coffee',
+  });
+  const place3 = await Place.createOrUpdatePlace(user3.id, {
+    nit: 123456783,
+    signboard: 'Olimpica test, test, test',
+    images: [emptyImg, emptyImg, emptyImg],
+    description,
+    category: 'food',
+  });
+  const place4 = await Place.createOrUpdatePlace(user4.id, {
+    nit: 123456784,
+    signboard: 'Mercedes test, test, test',
+    images: [emptyImg, emptyImg, emptyImg],
+    description,
+    category: 'Coffee',
+  });
 
   // const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);
   // const geoFire2 = await geoFire.set(user2.id, [locations[1].lat, locations[1].lng]);
