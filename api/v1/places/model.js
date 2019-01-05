@@ -6,7 +6,7 @@ const UsersPlaces = require('../usersPlaces/model');
 
 const Model = db.collection('places');
 
-const getResponse = async (user, place) => {
+const getResponse = (user, place) => {
   const {
     name,
     phoneNumber,
@@ -20,6 +20,7 @@ const getResponse = async (user, place) => {
     images,
     description,
     category,
+    rate,
   } = place;
   return {
     id,
@@ -32,6 +33,22 @@ const getResponse = async (user, place) => {
     signboard,
     description,
     category,
+    rate,
+  };
+};
+
+const getPlaceParams = (body) => {
+  const {
+    nit,
+    signboard,
+    description,
+    category,
+  } = body;
+  return {
+    nit,
+    signboard,
+    description,
+    category,
   };
 };
 
@@ -39,16 +56,15 @@ const getPlace = async (userId) => {
   const data = await Model
     .where('userId', '==', userId)
     .get();
-  return Object.assign({ id: data.docs[0].id }, data.docs[0].data());
+  const rate = await UsersPlaces.getPlaceRate(data.docs[0].id);
+  return Object.assign({ id: data.docs[0].id, rate }, data.docs[0].data());
 };
 
 const getPlaceMergedWithUser = async (user) => {
-  const placeRespone = await Model
-    .where('userId', '==', user.id)
-    .get();
+  const place = await getPlace(user.id);
   return getResponse(
     user,
-    Object.assign({ id: placeRespone.docs[0].id }, placeRespone.docs[0].data()),
+    place,
   );
 };
 
@@ -97,7 +113,11 @@ const getPlacesByRadius = async (userId, userLoc, radius) => {
         const { location } = placeUserData;
         const distance = getDistance(userLoc, location);
         if (distance <= radius) {
-          return Object.assign(placeUserData, { distance, id: place.id }, place);
+          const rate = await UsersPlaces.getPlaceRate(place.id);
+          return Object.assign(
+            getResponse(placeUserData, place),
+            { id: place.id, distance, rate },
+          );
         }
       }
       return null;
@@ -112,23 +132,19 @@ const starredPlaces = async (userId, userLoc) => {
     const place = await Model.doc(userPlace.placeId).get();
     const user = await User.Model.doc(place.data().userId).get();
     const distance = getDistance(userLoc, user.data().location);
-    return Object.assign({ id: place.id, distance }, user.data(), place.data());
+    const rate = await UsersPlaces.getPlaceRate(userPlace.placeId);
+    const { qualify } = userPlace;
+    return Object.assign(
+      getResponse(user.data(), place.data()),
+      {
+        id: place.id,
+        userPlaceId: userPlace.id,
+        distance,
+        rate,
+        qualify,
+      },
+    );
   }));
-};
-
-const getPlaceParams = (body) => {
-  const {
-    nit,
-    signboard,
-    description,
-    category,
-  } = body;
-  return {
-    nit,
-    signboard,
-    description,
-    category,
-  };
 };
 
 module.exports = {
