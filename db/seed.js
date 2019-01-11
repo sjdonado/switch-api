@@ -68,6 +68,16 @@ const locations = [
   },
 ];
 
+const closingTime = {
+  hourOfDay: 19,
+  minute: 56,
+};
+
+const openingTime = {
+  hourOfDay: 6,
+  minute: 30,
+};
+
 (async () => {
   const user1 = await User.createUser({
     uid: 'aiNOzljaWTWWAIKsP6ltuyZtyTX2',
@@ -111,6 +121,8 @@ const locations = [
     nit: 123456781,
     signboard: 'Efecty test, test, test',
     images: [emptyImg, emptyImg, emptyImg],
+    openingTime,
+    closingTime,
     description,
     category: 'food',
   });
@@ -118,6 +130,8 @@ const locations = [
     nit: 123456782,
     signboard: 'Americano test, test, test',
     images: [emptyImg, emptyImg, emptyImg],
+    openingTime,
+    closingTime,
     description,
     category: 'Coffee',
   });
@@ -125,6 +139,8 @@ const locations = [
     nit: 123456783,
     signboard: 'Olimpica test, test, test',
     images: [emptyImg, emptyImg, emptyImg],
+    openingTime,
+    closingTime,
     description,
     category: 'food',
   });
@@ -132,6 +148,8 @@ const locations = [
     nit: 123456784,
     signboard: 'Mercedes test, test, test',
     images: [emptyImg, emptyImg, emptyImg],
+    openingTime,
+    closingTime,
     description,
     category: 'Coffee',
   });

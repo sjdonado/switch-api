@@ -56,6 +56,8 @@ module.exports.update = async (req, res, next) => {
       delete body.signboard;
       delete body.description;
       delete body.category;
+      delete body.openingTime;
+      delete body.closingTime;
     }
     // if (body.location) await updateOrCreateLocation(user.uid, body.location);
     await Model

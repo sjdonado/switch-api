@@ -10,6 +10,7 @@ const {
   getPlacesByRadius,
   starredPlaces,
   updatePlace,
+  getCategories,
 } = require('./model');
 
 module.exports.sendNotification = (req, res, next) => {
@@ -27,7 +28,8 @@ module.exports.get = async (req, res, next) => {
   const { user } = req;
   try {
     const data = await getPlaceMergedWithUser(user);
-    res.json({ data });
+    const categories = await getCategories();
+    res.json({ data: Object.assign(data, { categories }) });
   } catch (e) {
     next(e);
   }
@@ -49,7 +51,8 @@ module.exports.search = async (req, res, next) => {
   const { radius } = query;
   try {
     const data = await getPlacesByRadius(id, location, radius);
-    res.json({ data });
+    const categories = await getCategories();
+    res.json({ data: Object.assign(data, { categories }) });
   } catch (e) {
     next(e);
   }

@@ -4,6 +4,7 @@
     curl https://sdk.cloud.google.com | bash
     npm install -g firebase-tools @google-cloud/functions-emulator
     gcloud auth application-default login
+    npm run init
 ```
 # Setup server
 switch-dev-smartrends@appspot.gserviceaccount.com // App Engine default service account

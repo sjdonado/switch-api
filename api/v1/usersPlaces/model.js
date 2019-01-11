@@ -31,7 +31,7 @@ const getPlaceRate = async placeId => Model.where('placeId', '==', placeId)
     querySnapshot.forEach((doc) => {
       if (doc.data().qualify) qualify += doc.data().qualify;
     });
-    return qualify / querySnapshot.size;
+    return { rate: qualify / querySnapshot.size, size: querySnapshot.size };
   });
 
 module.exports = {

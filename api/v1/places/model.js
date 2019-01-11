@@ -1,4 +1,9 @@
-const { db, geoFire, getDistance } = require('../../../lib/firebase');
+const {
+  db,
+  geoFire,
+  getDistance,
+  configModel,
+} = require('../../../lib/firebase');
 const { emptyImg } = require('../../../lib/utils');
 
 const User = require('../users/model');
@@ -21,6 +26,8 @@ const getResponse = (user, place) => {
     description,
     category,
     rate,
+    openingTime,
+    closingTime,
   } = place;
   return {
     id,
@@ -34,6 +41,8 @@ const getResponse = (user, place) => {
     description,
     category,
     rate,
+    openingTime,
+    closingTime,
   };
 };
 
@@ -43,12 +52,16 @@ const getPlaceParams = (body) => {
     signboard,
     description,
     category,
+    openingTime,
+    closingTime,
   } = body;
   return {
     nit,
     signboard,
     description,
     category,
+    openingTime,
+    closingTime,
   };
 };
 
@@ -147,6 +160,11 @@ const starredPlaces = async (userId, userLoc) => {
   }));
 };
 
+const getCategories = async () => {
+  const data = await configModel.where('name', '==', 'categories').get();
+  return data.docs[0].data().categories;
+};
+
 module.exports = {
   Model,
   getPlace,
@@ -157,4 +175,5 @@ module.exports = {
   getPlacesByRadius,
   starredPlaces,
   getPlaceParams,
+  getCategories,
 };
