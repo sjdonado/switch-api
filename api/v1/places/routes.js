@@ -7,6 +7,8 @@ const { isACompany } = require('../../../lib/auth');
 router.get('/', isACompany, controller.get);
 router.get('/search', controller.search);
 router.get('/starred', controller.starredPlaces);
+router.get('/categories', controller.getCategories);
+
 router.post('/notification', isACompany, controller.sendNotification);
 router.post('/image/:position', isACompany, controller.uploadImage);
 router.put('/', isACompany, controller.update);

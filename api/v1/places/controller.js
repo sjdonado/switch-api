@@ -28,8 +28,7 @@ module.exports.get = async (req, res, next) => {
   const { user } = req;
   try {
     const data = await getPlaceMergedWithUser(user);
-    const categories = await getCategories();
-    res.json({ data: Object.assign(data, { categories }) });
+    res.json({ data });
   } catch (e) {
     next(e);
   }
@@ -98,4 +97,9 @@ module.exports.deleteImage = async (req, res, next) => {
   } catch (e) {
     next(e);
   }
+};
+
+module.exports.getCategories = async (req, res, next) => {
+  const data = await getCategories();
+  res.json({ data });
 };
