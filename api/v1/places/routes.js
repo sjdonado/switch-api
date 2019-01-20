@@ -7,7 +7,9 @@ const { isACompany } = require('../../../lib/auth');
 router.get('/', isACompany, controller.get);
 router.get('/search', controller.search);
 router.get('/starred', controller.starredPlaces);
-router.get('/categories', controller.getCategories);
+router.get('/categories/all', controller.getAllCategories);
+router.get('/categories/groups', controller.getGroupCategories);
+router.get('/categories/:id', controller.getGroupCategories);
 
 router.post('/notification', isACompany, controller.sendNotification);
 router.post('/image/:position', isACompany, controller.uploadImage);

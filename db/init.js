@@ -1,7 +1,8 @@
 const { configModel } = require('../lib/firebase');
-const categories = require('./googleMyBusinessCategories.json');
+const data = require('./googleMyBusinessCategories.json');
 
 (async () => {
-  console.log(await configModel.add({ name: 'categories', categories }));
+  console.log(data);
+  console.log(await configModel.add(Object.assign(data, { name: 'categories' })));
   process.exit();
 })();

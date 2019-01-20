@@ -107,14 +107,16 @@ function updateOrCreateLocation(userId, location) {
   return geoFire.set(userId, [location.lat, location.lng]);
 }
 
-const getPlacesByRadius = async (userId, userLoc, radius) => {
-  await User.Model.doc(userId).update({ radius });
+const getPlacesByRadius = async (userId, userLoc, radius, filters) => {
+  await User.Model.doc(userId).update({ radius, filters });
   const availablePlaces = [];
   const rejectedPlaces = await UsersPlaces.getUserPlaces(userId);
   await Model.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (!rejectedPlaces.some(e => e.placeId === doc.id)) {
-        availablePlaces.push(Object.assign({ id: doc.id }, doc.data()));
+        let accept = true;
+        if (filters.length > 0 && !filters.some(e => doc.data().category === e)) accept = false;
+        if (accept) availablePlaces.push(Object.assign({ id: doc.id }, doc.data()));
       }
     });
   });
@@ -160,9 +162,24 @@ const starredPlaces = async (userId, userLoc) => {
   }));
 };
 
-const getCategories = async () => {
-  const data = await configModel.where('name', '==', 'categories').get();
-  return data.docs[0].data().categories;
+const getGroupCategories = async () => {
+  const data = {};
+  const categories = await configModel
+    .where('name', '==', 'categories')
+    .get();
+  categories.docs[0].data().Detalle.forEach((doc) => {
+    if (typeof data[doc.Grupo] === 'undefined') data[doc.Grupo] = [];
+    // if (!data.some(category => category === doc.Grupo)) data.push(doc.Grupo);
+    data[doc.Grupo].push({ segment: doc.Segmento, subsegment: doc.Subsegmento });
+  });
+  return data;
+};
+
+const getAllCategories = async () => {
+  const config = await configModel
+    .where('name', '==', 'categories')
+    .get();
+  return config.docs[0].data().Detalle;
 };
 
 module.exports = {
@@ -175,5 +192,6 @@ module.exports = {
   getPlacesByRadius,
   starredPlaces,
   getPlaceParams,
-  getCategories,
+  getAllCategories,
+  getGroupCategories,
 };

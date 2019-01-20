@@ -124,7 +124,7 @@ const openingTime = {
     openingTime,
     closingTime,
     description,
-    category: 'food',
+    category: 'Aeropuerto',
   });
   const place2 = await Place.createOrUpdatePlace(user2.id, {
     nit: 123456782,
@@ -133,7 +133,7 @@ const openingTime = {
     openingTime,
     closingTime,
     description,
-    category: 'Coffee',
+    category: 'Aeropuerto militar',
   });
   const place3 = await Place.createOrUpdatePlace(user3.id, {
     nit: 123456783,
@@ -142,7 +142,7 @@ const openingTime = {
     openingTime,
     closingTime,
     description,
-    category: 'food',
+    category: 'Agencia de espectáculos',
   });
   const place4 = await Place.createOrUpdatePlace(user4.id, {
     nit: 123456784,
@@ -151,7 +151,7 @@ const openingTime = {
     openingTime,
     closingTime,
     description,
-    category: 'Coffee',
+    category: 'Agencia de excursiones',
   });
 
   // const geoFire1 = await geoFire.set(user1.id, [locations[0].lat, locations[0].lng]);

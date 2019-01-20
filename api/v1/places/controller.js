@@ -10,7 +10,8 @@ const {
   getPlacesByRadius,
   starredPlaces,
   updatePlace,
-  getCategories,
+  getAllCategories,
+  getGroupCategories,
 } = require('./model');
 
 module.exports.sendNotification = (req, res, next) => {
@@ -47,10 +48,10 @@ module.exports.update = async (req, res, next) => {
 module.exports.search = async (req, res, next) => {
   const { user, query } = req;
   const { location, id } = user;
-  const { radius } = query;
+  const { radius, filters } = query;
   try {
-    const data = await getPlacesByRadius(id, location, radius);
-    const categories = await getCategories();
+    const data = await getPlacesByRadius(id, location, radius, filters.length > 0 ? filters.split(',') : []);
+    const categories = await getAllCategories();
     res.json({ data: Object.assign(data, { categories }) });
   } catch (e) {
     next(e);
@@ -99,7 +100,12 @@ module.exports.deleteImage = async (req, res, next) => {
   }
 };
 
-module.exports.getCategories = async (req, res, next) => {
-  const data = await getCategories();
+module.exports.getAllCategories = async (req, res, next) => {
+  const data = await getAllCategories();
+  res.json({ data });
+};
+
+module.exports.getGroupCategories = async (req, res, next) => {
+  const data = await getGroupCategories();
   res.json({ data });
 };

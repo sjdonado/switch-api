@@ -7,12 +7,21 @@ const Model = db.collection('usersPlaces');
 const types = { accepted: 0, rejected: 1 };
 
 const getUsersPlacesByType = async (userId, type) => {
-  const response = await Model.where('userId', '==', userId).where('type', '==', type).get();
+  const response = await Model
+    .where('userId', '==', userId)
+    .where('type', '==', type)
+    .where('visibility', '==', true)
+    .get();
   return response.docs.map(doc => Object.assign({ id: doc.id }, doc.data()));
 };
 
 const acceptOrReject = async (placeId, userId, type) => {
-  const userPlace = await Model.add({ placeId, userId, type });
+  const userPlace = await Model.add({
+    placeId,
+    userId,
+    type,
+    visibility: true,
+  });
   return userPlace;
 };
 

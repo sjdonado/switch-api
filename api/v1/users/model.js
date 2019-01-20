@@ -20,6 +20,7 @@ const createEmptyUser = async (user) => {
     phoneNumber: user.phone_number,
     profilePicture: defaultProfilePicture,
     radius: 500,
+    filters: [],
   };
   const reference = await createUser(body);
   return Object.assign({ id: reference.id }, body);

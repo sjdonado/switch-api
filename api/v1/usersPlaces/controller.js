@@ -37,10 +37,22 @@ module.exports.qualify = async (req, res, next) => {
   const { id } = params;
   try {
     const userPlace = await Model.doc(id).get();
-    const rate = await getPlaceRate(userPlace.data().placeId);
     const data = Object.assign(userPlace.data(), { qualify });
     await Model.doc(id).update(data);
-    res.json({ data: Object.assign({ rate }, data) });
+    const rate = await getPlaceRate(userPlace.data().placeId);
+    res.json({ data: { rate, qualify } });
+  } catch (e) {
+    next(e);
+  }
+};
+
+module.exports.remove = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const userPlace = await Model.where('placeId', '==', id).get();
+    const data = Object.assign(userPlace.docs[0].data(), { visibility: false });
+    await Model.doc(userPlace.docs[0].id).update({ visibility: false });
+    res.json({ data });
   } catch (e) {
     next(e);
   }

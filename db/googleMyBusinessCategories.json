@@ -1,369 +1,1814 @@
-[
-  "Aeropuerto",
-  "Aeropuerto militar",
-  "Agencia de espectáculos",
-  "Agencia de excursiones",
-  "Agencia de itinerarios turísticos",
-  "Agencia de préstamos",
-  "Agencia de traducción",
-  "Agencia de viajes",
-  "Agencia inmobiliaria",
-  "Alquiler de automóvil",
-  "Alquiler de bicicletas",
-  "Alquiler de equipo audiovisual",
-  "Alquiler de equipos de fotografía",
-  "Alquiler de instrumentos musicales",
-  "Alquiler de limusinas",
-  "Alquiler de motos",
-  "Ambulancia",
-  "Apartamento turístico",
-  "Apartotel",
-  "Autobús urbano",
-  "Banco",
-  "Bar",
-  "Bar de copas",
-  "Bar de tapas",
-  "Biblioteca pública",
-  "Bingo",
-  "Bolera",
-  "Bombonería",
-  "Campamento",
-  "Camping",
-  "Campo de fútbol",
-  "Campo de golf",
-  "Campo de tiro",
-  "Canales y Puertos",
-  "Cancha de baloncesto",
-  "Cantera",
-  "Casa de la cultura",
-  "Casa rural",
-  "Casino",
-  "Catedral",
-  "Centro comercial",
-  "Centro de bronceado",
-  "Centro de estética",
-  "Centro de formación profesional",
-  "Centro de jardinera",
-  "Centro de masajes",
-  "Centro de pilates",
-  "Centro de salud",
-  "Centro de yoga",
-  "Centro deportivo",
-  "Centro social y cultural",
-  "Cervecería",
-  "Chocolatería",
-  "Churrería",
-  "Cibercafé",
-  "Clases de danza del vientre",
-  "Clases de salsa",
-  "Club de ajedrez",
-  "Club de alterne",
-  "Club de atletismo",
-  "Club de automovilismo",
-  "Club de baloncesto",
-  "Club de caza",
-  "Club de esquí",
-  "Club de fitness",
-  "Club de fútbol",
-  "Club de golf",
-  "Club de natación",
-  "Club de pádel",
-  "Club de pesca deportiva",
-  "Club de tenis",
-  "Club de tiro deportivo",
-  "Club náutico",
-  "Club social privado",
-  "Cámara de comercio",
-  "Colegio bilingüe",
-  "Colegio concertado",
-  "Colegio de educación especial",
-  "Colegio mayor universitario",
-  "Colegio Oficial de Abogados",
-  "Colegio Oficial de Aparejadores y Arquitectos Técnicos",
-  "Colegio Oficial de Arquitectos",
-  "Colegio Oficial de Enfermería",
-  "Colegio Oficial de Ingenieros Industriales",
-  "Colegio Oficial de Ingenieros Técnicos Industriales",
-  "Colegio Oficial de Médicos",
-  "Colegio Oficial de Notarios",
-  "Colegio público",
-  "Colegio privado",
-  "Comedor universitario",
-  "Comida china a domicilio",
-  "Comisaría de Policía",
-  "Complejo hotelero",
-  "Dentista",
-  "Deportes de aventura",
-  "Discoteca",
-  "Droguería",
-  "Empresa de mensajera",
-  "Empresa papelera",
-  "Estadio",
-  "Estanco",
-  "Galera de arte",
-  "Gasolinera",
-  "Gimnasio",
-  "Gran hotel",
-  "Guardería",
-  "Heladera",
-  "Hipermercado",
-  "Hospital infantil",
-  "Hospital militar",
-  "Hospital psiquiátrico",
-  "Hospital universitario",
-  "Hostal",
-  "Hotel",
-  "Hotel balneario",
-  "Hotel cerca de aeropuerto",
-  "Hotel con encanto",
-  "Hotel de 2 estrellas",
-  "Hotel de 3 estrellas",
-  "Hotel de 4 estrellas",
-  "Hotel de 5 estrellas",
-  "Hotel en el centro",
-  "Hotel en la playa",
-  "Hotel rural",
-  "Iglesia",
-  "Iglesia adventista del séptimo da",
-  "Iglesia católica",
-  "Iglesia de los testigos de Jehová",
-  "Iglesia evangélica",
-  "Iglesia ortodoxa",
-  "Jamonería",
-  "Jardín botánico",
-  "Juguetera",
-  "Karaoke",
-  "Lagunas y Pantanos",
-  "Lavandería",
-  "Librera",
-  "Librera especializada en libros raros y antiguos",
-  "Librería especializada en arquitectura",
-  "Librería especializada en deportes",
-  "Librería especializada en derecho",
-  "Librería especializada en esoterismo",
-  "Librería especializada en gastronomía",
-  "Librería especializada en historia y ciencias sociales",
-  "Librería especializada en lengua inglesa",
-  "Librería especializada en medicina",
-  "Librería especializada en música",
-  "Librería especializada en temática homosexual",
-  "Libreria especializada en temática religiosa",
-  "Librería especializada en viajes y turismo",
-  "Librería infantil",
-  "Librería técnica",
-  "Metro",
-  "Metro ligero",
-  "Mezquita",
-  "Monasterio",
-  "Monumento",
-  "Motel",
-  "Museo arqueológico",
-  "Museo de arte moderno",
-  "Museo de bellas artes",
-  "Museo de ciencia y tecnología",
-  "Museo de historia",
-  "Museo de historia natural",
-  "Museo etnográfico",
-  "Oficina de cambio de divisas",
-  "Oficina de correos",
-  "Oficina de extranjera",
-  "Oficina de información al ciudadano",
-  "Oficina de la Seguridad Social",
-  "Oficina de turismo",
-  "Oficina pública de empleo",
-  "Outlet",
-  "Paintball",
-  "Pajarera",
-  "Palacio de congresos",
-  "Palacio de Justicia",
-  "Panadera",
-  "Papelera",
-  "Parada de tranvía",
-  "Parador",
-  "Parafarmacia",
-  "Parking",
-  "Parking de coche compartido",
-  "Parque",
-  "Parque acuático",
-  "Parque de atracciones",
-  "Parque de bomberos",
-  "Parque natural",
-  "Parque safari",
-  "Parque tecnológico",
-  "Parroquia",
-  "Pastelería",
-  "Peluquera",
-  "Peluquería canina",
-  "Peluquero a domicilio",
-  "Perfumería",
-  "Piscina",
-  "Piscina pública",
-  "Pista de atletismo",
-  "Pista de karts",
-  "Pista de pádel",
-  "Pista de patinaje sobre hielo",
-  "Pista de patinaje sobre ruedas",
-  "Pista de skate",
-  "Pista de squash",
-  "Pista de tenis",
-  "Pizzería",
-  "Pizzería a domicilio",
-  "Playa",
-  "Playa nudista",
-  "Plaza de toros",
-  "Polideportivo",
-  "Polígono industrial",
-  "Posada",
-  "Puerto deportivo",
-  "Punto Wi-Fi",
-  "Recinto ferial",
-  "Registro civil",
-  "Registro de bienes inmuebles",
-  "Registro de la propiedad",
-  "Registro de la propiedad intelectual",
-  "Registro mercantil",
-  "Relojera",
-  "Residencia",
-  "Residencia canina",
-  "Residencia de ancianos",
-  "Residencia de estudiantes",
-  "Residencia militar",
-  "Restaurante",
-  "Restaurante alemán",
-  "Restaurante andaluz",
-  "Restaurante argentino",
-  "Restaurante asturiano",
-  "Restaurante brasileño",
-  "Restaurante castellano",
-  "Restaurante catalán",
-  "Restaurante chino",
-  "Restaurante cubano",
-  "Restaurante de cocina creativa",
-  "Restaurante de cocina de mercado",
-  "Restaurante de cocina española",
-  "Restaurante de cocina mediterránea",
-  "Restaurante de cocina norteamericana",
-  "Restaurante de comida casera",
-  "Restaurante de comida rpida",
-  "Restaurante de lujo",
-  "Restaurante extremeño",
-  "Restaurante francés",
-  "Restaurante gallego",
-  "Restaurante griego",
-  "Restaurante hindú",
-  "Restaurante italiano",
-  "Restaurante japonés",
-  "Restaurante mallorquín",
-  "Restaurante marroquí",
-  "Restaurante mexicano",
-  "Restaurante portugués",
-  "Restaurante tailandés",
-  "Restaurante vasco",
-  "Restaurante vegetariano",
-  "Sala de billares",
-  "Sala de cine",
-  "Sala de conciertos",
-  "Salón de manicura",
-  "Salón de celebraciones",
-  "Santuario",
-  "Sauna",
-  "Seminario religioso",
-  "Sex shop",
-  "Sidrería",
-  "Sinagoga",
-  "Supermercado",
-  "Taberna",
-  "Teatro",
-  "Tienda 24 horas",
-  "Tienda de acuarios",
-  "Tienda de alta costura",
-  "Tienda de animales",
-  "Tienda de antigüedades",
-  "Tienda de armarios",
-  "Tienda de arreglos de ropa",
-  "Tienda de artículos de caza",
-  "Tienda de artículos de danza y gimnasia",
-  "Tienda de artículos de fiesta",
-  "Tienda de artículos de fútbol",
-  "Tienda de artículos de golf",
-  "Tienda de artículos de natación",
-  "Tienda de artículos de pesca",
-  "Tienda de artesana",
-  "Tienda de artículos de flamenco",
-  "Tienda de artículos de hípica",
-  "Tienda de artículos de segunda mano",
-  "Tienda de artículos premamá y de bebé",
-  "Tienda de bicicletas",
-  "Tienda de bisutería y complementos",
-  "Tienda de bolsos",
-  "Tienda de bricolaje",
-  "Tienda de calderas",
-  "Tienda de cerámica",
-  "Tienda de chimeneas",
-  "Tienda de cómics",
-  "Tienda de componentes electrónicos",
-  "Tienda de congelados",
-  "Tienda de cortinas",
-  "Tienda de cuadros y láminas",
-  "Tienda de decoración",
-  "Tienda de delicatessen",
-  "Tienda de deportes",
-  "Tienda de discos",
-  "Tienda de disfraces",
-  "Tienda de electrónica",
-  "Tienda de electrodomésticos",
-  "Tienda de enmarcación",
-  "Tienda de equipos de sonido",
-  "Tienda de esquí",
-  "Tienda de estampación",
-  "Tienda de fotografía",
-  "Tienda de golosinas",
-  "Tienda de guitarras",
-  "Tienda de iluminación",
-  "Tienda de impresión digital",
-  "Tienda de informática",
-  "Tienda de instrumentos musicales",
-  "Tienda de lanas",
-  "Tienda de lencería",
-  "Tienda de libros de segunda mano",
-  "Tienda de magia",
-  "Tienda de manualidades y bellas artes",
-  "Tienda de materiales de saneamiento",
-  "Tienda de menaje de cocina",
-  "Tienda de moda joven",
-  "Tienda de modelismo",
-  "Tienda de muebles",
-  "Tienda de muebles de cocina",
-  "Tienda de muebles de exterior",
-  "Tienda de muebles de oficina",
-  "Tienda de neumáticos",
-  "Tienda de patinaje",
-  "Tienda de pinturas y barnices",
-  "Tienda de recambios de automóvil",
-  "Tienda de recambios de motocicleta",
-  "Tienda de regalos",
-  "Tienda de ropa de playa",
-  "Tienda de ropa de segunda mano",
-  "Tienda de ropa infantil",
-  "Tienda de ropa para hombre",
-  "Tienda de ropa para mujer",
-  "Tienda de skate",
-  "Tienda de sofás",
-  "Tienda de surf",
-  "Tienda de tallas grandes",
-  "Tienda de tejidos",
-  "Tienda de telefonía móvil",
-  "Tienda de tenis y pádel",
-  "Tienda de todo a 100",
-  "Tienda de trajes de novia",
-  "Tienda de ultramarinos",
-  "Tienda de vehículos de segunda mano y de ocasión",
-  "Tienda de vestuario laboral",
-  "Tienda de videojuegos",
-  "Videoclub",
-  "Vinoteca",
-  "Vivero de mariscos",
-  "Vivero de plantas",
-  "Zoológico",
-  "Categorias Google My Business"
-]
+{
+	"Detalle": [
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Aeropuerto",
+					"Subsegmento": "Aeropuerto"
+			},
+			{
+					"Grupo": "Transporte Aereo, Urbano Terrestre y Maritimo",
+					"Segmento": "Aeropuerto",
+					"Subsegmento": "Aeropuerto militar"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de espectáculos"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de excursiones"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de itinerarios turísticos"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de préstamos"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de traducción"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia de viajes"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Agencias",
+					"Subsegmento": "Agencia inmobiliaria"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de automóvil"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de bicicletas"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de equipo audiovisual"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de equipos de fotografía"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de instrumentos musicales"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de limusinas"
+			},
+			{
+					"Grupo": "Alquileres Articulos ",
+					"Segmento": "Alquiler Mobiliario",
+					"Subsegmento": "Alquiler de motos"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Apartamento turístico"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Apartotel"
+			},
+			{
+					"Grupo": "Transporte Aereo, Urbano Terrestre y Maritimo",
+					"Segmento": "Transporte",
+					"Subsegmento": "Autobús urbano"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Banco"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Bar"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Bar de copas"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Bar de tapas"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Biblioteca pública"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Bingo"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Bolera"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Campamento"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Camping"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Campo de fútbol"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Campo de golf"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Campo de tiro"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Canales y Puertos"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Cancha de baloncesto"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Cantera"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Casa de la cultura"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Casa rural"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Casino"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Catedral"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro comercial"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de bronceado"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de estética"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Educacion y formacion",
+					"Subsegmento": "Centro de formación profesional"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Centro de jardinera"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de masajes"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de pilates"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de salud"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Centro de yoga"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Centro deportivo"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Centro social y cultural"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Cervecería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Chocolatería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Churrería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Cibercafé"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Clases de danza del vientre"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Clases de salsa"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de ajedrez"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de alterne"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de atletismo"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de automovilismo"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de baloncesto"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de caza"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de esquí"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de fitness"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de fútbol"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de golf"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de natación"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de pádel"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de pesca deportiva"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de tenis"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club de tiro deportivo"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club náutico"
+			},
+			{
+					"Grupo": "Clubes y Asociaciones",
+					"Segmento": "Clubes",
+					"Subsegmento": "Club social privado"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Cámara de comercio"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio bilingüe"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio concertado"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio de educación especial"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio mayor universitario"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Abogados"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Aparejadores y Arquitectos Técnicos"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Arquitectos"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Enfermería"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Ingenieros Industriales"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Ingenieros Técnicos Industriales"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Médicos"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio Oficial de Notarios"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio público"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Colegios",
+					"Subsegmento": "Colegio privado"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Comida china a domicilio"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Comisaría de Policía"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Complejo hotelero"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Dentista"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Deportes de aventura"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Discoteca"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Droguería",
+					"Subsegmento": "Droguería"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Empresa de mensajera"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Empresa papelera"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Estadio"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Estanco"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Galera de arte"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Gasolinera",
+					"Subsegmento": "Gasolinera"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Gimnasio",
+					"Subsegmento": "Gimnasio"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Gran hotel"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Guardería",
+					"Subsegmento": "Guardería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Heladera"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Hipermercado",
+					"Subsegmento": "Hipermercado"
+			},
+			{
+					"Grupo": "Hospitales y Centros de Salud",
+					"Segmento": "Hospitales",
+					"Subsegmento": "Hospital infantil"
+			},
+			{
+					"Grupo": "Hospitales y Centros de Salud",
+					"Segmento": "Hospitales",
+					"Subsegmento": "Hospital militar"
+			},
+			{
+					"Grupo": "Hospitales y Centros de Salud",
+					"Segmento": "Hospitales",
+					"Subsegmento": "Hospital psiquiátrico"
+			},
+			{
+					"Grupo": "Hospitales y Centros de Salud",
+					"Segmento": "Hospitales",
+					"Subsegmento": "Hospital universitario"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hostal"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel balneario"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel cerca de aeropuerto"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel con encanto"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel de 2 estrellas"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel de 3 estrellas"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel de 4 estrellas"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel de 5 estrellas"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel en el centro"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel en la playa"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Hotel rural"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia adventista del séptimo da"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia católica"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia de los testigos de Jehová"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia evangélica"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Iglesias",
+					"Subsegmento": "Iglesia ortodoxa"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Jardín botánico"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Juguetera",
+					"Subsegmento": "Juguetera"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Karaoke"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Lagunas y Pantanos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Lavandería",
+					"Subsegmento": "Lavandería"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librera"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librera especializada en libros raros y antiguos"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en arquitectura"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en deportes"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en derecho"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en esoterismo"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en gastronomía"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en historia y ciencias sociales"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en lengua inglesa"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en medicina"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en música"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en temática homosexual"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Libreria especializada en temática religiosa"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería especializada en viajes y turismo"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería infantil"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Bibliotecas",
+					"Subsegmento": "Librería técnica"
+			},
+			{
+					"Grupo": "Transporte Aereo, Urbano Terrestre y Maritimo",
+					"Segmento": "Transporte",
+					"Subsegmento": "Metro"
+			},
+			{
+					"Grupo": "Transporte Aereo, Urbano Terrestre y Maritimo",
+					"Segmento": "Transporte",
+					"Subsegmento": "Metro ligero"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Mezquita"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Monasterio"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Monumento"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Motel",
+					"Subsegmento": "Motel"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo arqueológico"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo de arte moderno"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo de bellas artes"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo de ciencia y tecnología"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo de historia"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo de historia natural"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Museos",
+					"Subsegmento": "Museo etnográfico"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de cambio de divisas"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de correos"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de extranjera"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de información al ciudadano"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de la Seguridad Social"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina de turismo"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Oficina pública de empleo"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Centro comercial",
+					"Subsegmento": "Outlet"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Paintball"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Palacio de congresos"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Palacio de Justicia"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Panadera"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Papelera"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Parada de tranvía"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Parador"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Parafarmacia"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Parqueos",
+					"Subsegmento": "Parking"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Parqueos",
+					"Subsegmento": "Parking de coche compartido"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque acuático"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque de atracciones"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque de bomberos"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque natural"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque safari"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Parques",
+					"Subsegmento": "Parque tecnológico"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Parroquia"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Pastelería"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Peluquera"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Peluquería canina"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Peluquero a domicilio"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Perfumería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Piscina"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Piscina pública"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de atletismo"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de karts"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de pádel"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de patinaje sobre hielo"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de patinaje sobre ruedas"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de skate"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de squash"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Pista de tenis"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Pizzería"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Pizzería a domicilio"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Playas",
+					"Subsegmento": "Playa"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Playas",
+					"Subsegmento": "Playa nudista"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Playas",
+					"Subsegmento": "Plaza de toros"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Polideportivo"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Polígono industrial"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Posada"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Deporte",
+					"Subsegmento": "Puerto deportivo"
+			},
+			{
+					"Grupo": "Puntos de Conexión Wi-Fi",
+					"Segmento": "Wi- Fi",
+					"Subsegmento": "Punto Wi-Fi"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Recinto ferial"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Registro civil"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Registro de bienes inmuebles"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Registro de la propiedad"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Registro de la propiedad intelectual"
+			},
+			{
+					"Grupo": "Oficinas Administrativas y Tramites",
+					"Segmento": "Oficinas Administrativas",
+					"Subsegmento": "Registro mercantil"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Relojera"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Residencia"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Residencia canina"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Residencia de ancianos"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Residencia de estudiantes"
+			},
+			{
+					"Grupo": "Hoteles, Apartamentos y Hospedaje",
+					"Segmento": "Hospedaje ",
+					"Subsegmento": "Residencia militar"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante alemán"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante andaluz"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante argentino"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante asturiano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante brasileño"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante castellano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante catalán"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante chino"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante cubano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de cocina creativa"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de cocina de mercado"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de cocina española"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de cocina mediterránea"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de cocina norteamericana"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de comida casera"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de comida rpida"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante de lujo"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante extremeño"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante francés"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante gallego"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante griego"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante hindú"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante italiano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante japonés"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante mallorquín"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante marroquí"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante mexicano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante portugués"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante tailandés"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante vasco"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Restaurante vegetariano"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Sala de billares"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Sala de cine"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Sala de conciertos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Salón de manicura"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Salón de celebraciones"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Santuario"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Belleza y cuidado personal",
+					"Subsegmento": "Sauna"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Seminario religioso"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Sex shop",
+					"Subsegmento": "Sex shop"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Venta Productos",
+					"Subsegmento": "Sidrería"
+			},
+			{
+					"Grupo": "Cultura y Turismo Local",
+					"Segmento": "Cultura ",
+					"Subsegmento": "Sinagoga"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Supermercado",
+					"Subsegmento": "Supermercado"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Restaurantes y Bares",
+					"Subsegmento": "Taberna"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Cine",
+					"Subsegmento": "Teatro"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda 24 horas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de acuarios"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de alta costura"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de animales"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de antigüedades"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de armarios"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de arreglos de ropa"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de caza"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de danza y gimnasia"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de fiesta"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de fútbol"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de golf"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de natación"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de pesca"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artesana"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de flamenco"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de hípica"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos de segunda mano"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de artículos premamá y de bebé"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de bicicletas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de bisutería y complementos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de bolsos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de bricolaje"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de calderas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de cerámica"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de chimeneas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de cómics"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de componentes electrónicos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de congelados"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de cortinas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de cuadros y láminas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de decoración"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de delicatessen"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de deportes"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de discos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de disfraces"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de electrónica"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de electrodomésticos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de enmarcación"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de equipos de sonido"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de esquí"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de estampación"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de fotografía"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de golosinas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de guitarras"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de iluminación"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de impresión digital"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de informática"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de instrumentos musicales"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de lanas"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de lencería"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de libros de segunda mano"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de magia"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de manualidades y bellas artes"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de materiales de saneamiento"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de menaje de cocina"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de moda joven"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de modelismo"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de muebles"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de muebles de cocina"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de muebles de exterior"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de muebles de oficina"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de neumáticos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de patinaje"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de pinturas y barnices"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de recambios de automóvil"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de recambios de motocicleta"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de regalos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ropa de playa"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ropa de segunda mano"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ropa infantil"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ropa para hombre"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ropa para mujer"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de skate"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de sofás"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de surf"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de tallas grandes"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de tejidos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de telefonía móvil"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de tenis y pádel"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de todo a 100"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de trajes de novia"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de ultramarinos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de vehículos de segunda mano y de ocasión"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de vestuario laboral"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Tiendas",
+					"Subsegmento": "Tienda de videojuegos"
+			},
+			{
+					"Grupo": "Educacion y Formación ",
+					"Segmento": "Educacion y formacion",
+					"Subsegmento": "Universidad"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Actividades de Entretenimiento",
+					"Subsegmento": "Videoclub"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Vinoteca",
+					"Subsegmento": "Vinoteca"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Vivero",
+					"Subsegmento": "Vivero de mariscos"
+			},
+			{
+					"Grupo": "Comercio General, Servicios, Consumo Masivo y Compras varias",
+					"Segmento": "Vivero",
+					"Subsegmento": "Vivero de plantas"
+			},
+			{
+					"Grupo": "Ocío, Entretenimiento y Deportes",
+					"Segmento": "Zoologico",
+					"Subsegmento": "Zoológico"
+			}
+	]
+}
