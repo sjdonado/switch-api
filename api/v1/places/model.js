@@ -168,9 +168,9 @@ const getGroupCategories = async () => {
     .where('name', '==', 'categories')
     .get();
   categories.docs[0].data().Detalle.forEach((doc) => {
-    if (typeof data[doc.Grupo] === 'undefined') data[doc.Grupo] = [];
-    // if (!data.some(category => category === doc.Grupo)) data.push(doc.Grupo);
-    data[doc.Grupo].push({ segment: doc.Segmento, subsegment: doc.Subsegmento });
+    if (typeof data[doc.Grupo] === 'undefined') data[doc.Grupo] = {};
+    if (typeof data[doc.Grupo][doc.Segmento] === 'undefined') data[doc.Grupo][doc.Segmento] = [];
+    data[doc.Grupo][doc.Segmento].push(doc.Subsegmento);
   });
   return data;
 };
@@ -179,7 +179,7 @@ const getAllCategories = async () => {
   const config = await configModel
     .where('name', '==', 'categories')
     .get();
-  return config.docs[0].data().Detalle;
+  return config.docs[0].data().Detalle.map(cat => cat.Subsegmento);
 };
 
 module.exports = {
