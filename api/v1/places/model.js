@@ -107,16 +107,29 @@ function updateOrCreateLocation(userId, location) {
   return geoFire.set(userId, [location.lat, location.lng]);
 }
 
-const getPlacesByRadius = async (userId, userLoc, radius, filters) => {
-  await User.Model.doc(userId).update({ radius, filters });
+const getPlacesByRadius = async (userId, userLoc, radius, categories, filters) => {
+  await User.Model.doc(userId).update({ radius, categories, filters });
   const availablePlaces = [];
   const rejectedPlaces = await UsersPlaces.getUserPlaces(userId);
+  const open = filters.some(filter => filter === 'open');
+  const closed = filters.some(filter => filter === 'closed');
+  const date = new Date();
   await Model.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (!rejectedPlaces.some(e => e.placeId === doc.id)) {
+        const data = doc.data();
         let accept = true;
-        if (filters.length > 0 && !filters.some(e => doc.data().category === e)) accept = false;
-        if (accept) availablePlaces.push(Object.assign({ id: doc.id }, doc.data()));
+        if (categories.length > 0
+          && !categories.some(e => data.category === e)) accept = false;
+        if ((open || closed) && open !== closed) {
+          const openingTime = date.setHours(data.openingTime.hourOfDay, data.openingTime.minute);
+          const closingTime = date.setHours(data.closingTime.hourOfDay, data.closingTime.minute);
+          const openTime = Date.now() > openingTime && Date.now() < closingTime;
+          if (closed && openTime) accept = false;
+          if (open && !openTime) accept = false;
+        }
+        if (!open && !closed) accept = false;
+        if (accept) availablePlaces.push(Object.assign({ id: doc.id }, data));
       }
     });
   });

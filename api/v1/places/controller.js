@@ -48,11 +48,16 @@ module.exports.update = async (req, res, next) => {
 module.exports.search = async (req, res, next) => {
   const { user, query } = req;
   const { location, id } = user;
-  const { radius, filters } = query;
+  const { radius, categories, filters } = query;
   try {
-    const data = await getPlacesByRadius(id, location, radius, filters.length > 0 ? filters.split(',') : []);
-    const categories = await getAllCategories();
-    res.json({ data: Object.assign(data, { categories }) });
+    const data = await getPlacesByRadius(
+      id,
+      location,
+      radius,
+      categories.length > 0 ? categories.split(',') : [],
+      filters.length > 0 ? filters.split(',') : [],
+    );
+    res.json({ data });
   } catch (e) {
     next(e);
   }
