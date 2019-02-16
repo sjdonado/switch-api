@@ -109,8 +109,3 @@ module.exports.getAllCategories = async (req, res, next) => {
   const data = await getAllCategories();
   res.json({ data });
 };
-
-module.exports.getGroupCategories = async (req, res, next) => {
-  const data = await getGroupCategories();
-  res.json({ data });
-};

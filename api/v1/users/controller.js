@@ -4,7 +4,7 @@ const {
 } = require('../../../lib/firebase');
 
 const { Model, getUser, getOrCreateUser } = require('../users/model');
-const { createOrUpdatePlace, getPlaceParams } = require('../places/model');
+const { createOrUpdatePlace, getPlaceParams, getGroupCategories } = require('../places/model');
 
 module.exports.all = async (req, res, next) => {
   try {
@@ -21,7 +21,7 @@ module.exports.all = async (req, res, next) => {
 module.exports.read = async (req, res, next) => {
   const { user } = req;
   if (!user && !user.id) next(new Error('Bad request'));
-  res.json({ data: user });
+  res.json({ data: { user, categories: await getGroupCategories() } });
 };
 
 module.exports.upload = async (req, res, next) => {

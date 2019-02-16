@@ -21,7 +21,7 @@ const createEmptyUser = async (user) => {
     profilePicture: defaultProfilePicture,
     radius: 500,
     categories: [],
-    filters: ['open', 'closed'],
+    filters: [],
   };
   const reference = await createUser(body);
   return Object.assign({ id: reference.id }, body);

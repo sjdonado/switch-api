@@ -121,14 +121,14 @@ const getPlacesByRadius = async (userId, userLoc, radius, categories, filters) =
         let accept = true;
         if (categories.length > 0
           && !categories.some(e => data.category === e)) accept = false;
-        if ((open || closed) && open !== closed) {
+        if (open || closed) {
           const openingTime = date.setHours(data.openingTime.hourOfDay, data.openingTime.minute);
           const closingTime = date.setHours(data.closingTime.hourOfDay, data.closingTime.minute);
           const openTime = Date.now() > openingTime && Date.now() < closingTime;
           if (closed && openTime) accept = false;
           if (open && !openTime) accept = false;
         }
-        if (!open && !closed) accept = false;
+        // if (!open && !closed) accept = false;
         if (accept) availablePlaces.push(Object.assign({ id: doc.id }, data));
       }
     });
