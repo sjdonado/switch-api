@@ -23,6 +23,7 @@ const getResponse = (user, place) => {
     nit,
     signboard,
     images,
+    stories,
     description,
     category,
     rate,
@@ -35,6 +36,7 @@ const getResponse = (user, place) => {
     phoneNumber,
     profilePicture,
     images,
+    stories,
     location,
     nit,
     signboard,
@@ -96,7 +98,8 @@ const createOrUpdatePlace = async (userId, body) => {
   if (placeRespone.empty) {
     const placeResponse = await Model.add(Object.assign({
       userId,
-      images: [emptyImg, emptyImg, emptyImg],
+      images: [emptyImg, emptyImg, emptyImg, emptyImg],
+      stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     }, body));
     return { id: placeResponse.id };
   }

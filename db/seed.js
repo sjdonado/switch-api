@@ -120,7 +120,8 @@ const openingTime = {
   const place1 = await Place.createOrUpdatePlace(user1.id, {
     nit: 123456781,
     signboard: 'Efecty test, test, test',
-    images: [emptyImg, emptyImg, emptyImg],
+    images: [emptyImg, emptyImg, emptyImg, emptyImg],
+    stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     openingTime,
     closingTime,
     description,
@@ -129,7 +130,8 @@ const openingTime = {
   const place2 = await Place.createOrUpdatePlace(user2.id, {
     nit: 123456782,
     signboard: 'Americano test, test, test',
-    images: [emptyImg, emptyImg, emptyImg],
+    images: [emptyImg, emptyImg, emptyImg, emptyImg],
+    stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     openingTime,
     closingTime,
     description,
@@ -138,7 +140,8 @@ const openingTime = {
   const place3 = await Place.createOrUpdatePlace(user3.id, {
     nit: 123456783,
     signboard: 'Olimpica test, test, test',
-    images: [emptyImg, emptyImg, emptyImg],
+    images: [emptyImg, emptyImg, emptyImg, emptyImg],
+    stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     openingTime,
     closingTime,
     description,
@@ -147,7 +150,8 @@ const openingTime = {
   const place4 = await Place.createOrUpdatePlace(user4.id, {
     nit: 123456784,
     signboard: 'Mercedes test, test, test',
-    images: [emptyImg, emptyImg, emptyImg],
+    images: [emptyImg, emptyImg, emptyImg, emptyImg],
+    stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     openingTime,
     closingTime,
     description,

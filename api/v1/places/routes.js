@@ -11,7 +11,11 @@ router.get('/categories/all', controller.getAllCategories);
 
 router.post('/notification', isACompany, controller.sendNotification);
 router.post('/image/:position', isACompany, controller.uploadImage);
+router.post('/story/:position', isACompany, controller.uploadStory);
+
 router.put('/', isACompany, controller.update);
+
 router.delete('/image', isACompany, controller.deleteImage);
+router.delete('/story', isACompany, controller.deleteStory);
 
 module.exports = router;
