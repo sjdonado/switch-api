@@ -11,7 +11,6 @@ const {
   starredPlaces,
   updatePlace,
   getAllCategories,
-  getGroupCategories,
 } = require('./model');
 
 module.exports.sendNotification = (req, res, next) => {
@@ -74,70 +73,35 @@ module.exports.starredPlaces = async (req, res, next) => {
   }
 };
 
-async function uploadAndUpdate(req, res, next, path) {
+module.exports.uploadImage = async (req, res, next) => {
   try {
     const { files, user, params } = req;
     const place = await getPlace(user.id);
     const position = parseInt(params.position, 10);
-    const image = await uploadFile(`${path}/`, files[0]);
+    if (!place.images) place.images = [];
+    const image = await uploadFile('images/', files[0]);
     if (image instanceof Error) next(image);
-    switch (path) {
-      case 'images':
-        if (place.images[position].ref) await deleteFile(place.images[position].ref);
-        place.images[position] = Object.assign(image);
-        break;
-      case 'stories':
-        if (place.stories[position].ref) await deleteFile(place.stories[position].ref);
-        place.stories[position] = Object.assign(image);
-        break;
-      default:
-        break;
-    }
+    if (place.images[position].ref) await deleteFile(place.images[position].ref);
+    place.images[position] = Object.assign(image);
     const data = await updatePlace(user.id, place);
     res.json({ data });
   } catch (e) {
     next(e);
   }
-}
-
-module.exports.uploadImage = async (req, res, next) => {
-  await uploadAndUpdate(req, res, next, 'images');
 };
 
-module.exports.uploadStory = async (req, res, next) => {
-  await uploadAndUpdate(req, res, next, 'stories');
-};
-
-async function deleteAndUpdate(req, res, next, path) {
+module.exports.deleteImage = async (req, res, next) => {
   const { user, body } = req;
   const { position } = body;
   const place = await getPlace(user.id);
   try {
-    switch (path) {
-      case 'images':
-        await deleteFile(place.images[position].ref);
-        place.images[position] = emptyImg;
-        break;
-      case 'stories':
-        await deleteFile(place.stories[position].ref);
-        place.stories[position] = emptyImg;
-        break;
-      default:
-        break;
-    }
+    await deleteFile(place.images[position].ref);
+    place.images[position] = emptyImg;
     const data = await updatePlace(user.id, place);
     res.json({ data });
   } catch (e) {
     next(e);
   }
-}
-
-module.exports.deleteImage = async (req, res, next) => {
-  await deleteAndUpdate(req, res, next, 'images');
-};
-
-module.exports.deleteStory = async (req, res, next) => {
-  await deleteAndUpdate(req, res, next, 'stories');
 };
 
 module.exports.getAllCategories = async (req, res, next) => {

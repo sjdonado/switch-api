@@ -8,6 +8,7 @@ const { emptyImg } = require('../../../lib/utils');
 
 const User = require('../users/model');
 const UsersPlaces = require('../usersPlaces/model');
+const Stories = require('../stories/model');
 
 const Model = db.collection('places');
 
@@ -23,12 +24,12 @@ const getResponse = (user, place) => {
     nit,
     signboard,
     images,
-    stories,
     description,
     category,
     rate,
     openingTime,
     closingTime,
+    stories,
   } = place;
   return {
     id,
@@ -36,7 +37,6 @@ const getResponse = (user, place) => {
     phoneNumber,
     profilePicture,
     images,
-    stories,
     location,
     nit,
     signboard,
@@ -45,6 +45,7 @@ const getResponse = (user, place) => {
     rate,
     openingTime,
     closingTime,
+    stories,
   };
 };
 
@@ -77,10 +78,13 @@ const getPlace = async (userId) => {
 
 const getPlaceMergedWithUser = async (user) => {
   const place = await getPlace(user.id);
-  return getResponse(
+  const stories = await Stories.getPlaceStories(place.id);
+  return Object.assign(getResponse(
     user,
     place,
-  );
+  ), {
+    stories,
+  });
 };
 
 const updatePlace = async (userId, body) => {
@@ -99,7 +103,6 @@ const createOrUpdatePlace = async (userId, body) => {
     const placeResponse = await Model.add(Object.assign({
       userId,
       images: [emptyImg, emptyImg, emptyImg, emptyImg],
-      stories: [emptyImg, emptyImg, emptyImg, emptyImg],
     }, body));
     return { id: placeResponse.id };
   }
@@ -145,9 +148,15 @@ const getPlacesByRadius = async (userId, userLoc, radius, categories, filters) =
         const distance = getDistance(userLoc, location);
         if (distance <= radius) {
           const rate = await UsersPlaces.getPlaceRate(place.id);
+          const stories = await Stories.getPlaceStories(place.id);
           return Object.assign(
             getResponse(placeUserData, place),
-            { id: place.id, distance, rate },
+            {
+              id: place.id,
+              distance,
+              rate,
+              stories,
+            },
           );
         }
       }
