@@ -11,6 +11,7 @@ const getAllPlaceStories = async (placeId) => {
   const places = await Model
     .where('placeId', '==', placeId)
     .get();
+  console.log('places', places.docs);
   return places.docs.map(doc => Object.assign(
     { id: doc.id },
     doc.data(),
@@ -54,8 +55,11 @@ const createStory = async (placeId, profilePicture) => {
 
 const viewStory = async (userId, storyId) => {
   const story = await Model.doc(storyId).get();
-  const data = Object.assign(story.data(), { views: [...story.data().views, userId] });
-  Model.doc(storyId).update(data);
+  let data = story.data();
+  if (data.views.indexOf(userId) === -1) {
+    data = Object.assign(data, { views: [...data.views, userId] });
+    Model.doc(storyId).update(data);
+  }
   return data;
 };
 
