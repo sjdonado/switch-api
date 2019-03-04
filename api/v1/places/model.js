@@ -78,12 +78,14 @@ const getPlace = async (userId) => {
 
 const getPlaceMergedWithUser = async (user) => {
   const place = await getPlace(user.id);
+  const rate = await UsersPlaces.getPlaceRate(place.id);
   const stories = await Stories.getPlaceStories(place.id);
   return Object.assign(getResponse(
     user,
     place,
   ), {
     stories,
+    rate,
   });
 };
 
@@ -173,6 +175,7 @@ const starredPlaces = async (userId, userLoc) => {
     const user = await User.Model.doc(place.data().userId).get();
     const distance = getDistance(userLoc, user.data().location);
     const rate = await UsersPlaces.getPlaceRate(userPlace.placeId);
+    const stories = await Stories.getPlaceStories(userPlace.placeId);
     const { qualify } = userPlace;
     return Object.assign(
       getResponse(user.data(), place.data()),
@@ -181,6 +184,7 @@ const starredPlaces = async (userId, userLoc) => {
         userPlaceId: userPlace.id,
         distance,
         rate,
+        stories,
         myQualify: qualify,
       },
     );
