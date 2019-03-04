@@ -45,7 +45,12 @@ const getPlaceRate = async placeId => Model.where('placeId', '==', placeId)
         value += qualify.value;
         const user = await User.Model.doc(userId).get();
         const { profilePicture, name } = user.data();
-        comments.push({ profilePicture, name, comment: qualify.comment });
+        comments.push({
+          profilePicture,
+          name,
+          qualify: qualify.value,
+          value: qualify.comment,
+        });
         size += 1;
       }
     })).then(() => ({ value: value / size, size, comments }));
