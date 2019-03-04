@@ -181,7 +181,7 @@ const starredPlaces = async (userId, userLoc) => {
         userPlaceId: userPlace.id,
         distance,
         rate,
-        qualify,
+        myQualify: qualify,
       },
     );
   }));

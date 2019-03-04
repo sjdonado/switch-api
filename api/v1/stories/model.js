@@ -11,7 +11,6 @@ const getAllPlaceStories = async (placeId) => {
   const places = await Model
     .where('placeId', '==', placeId)
     .get();
-  console.log('places', places.docs);
   return places.docs.map(doc => Object.assign(
     { id: doc.id },
     doc.data(),

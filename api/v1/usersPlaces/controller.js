@@ -33,14 +33,14 @@ module.exports.rejectPlace = async (req, res, next) => {
 
 module.exports.qualify = async (req, res, next) => {
   const { body, params } = req;
-  const { qualify } = body;
+  const { value, comment } = body;
   const { id } = params;
   try {
     const userPlace = await Model.doc(id).get();
-    const data = Object.assign(userPlace.data(), { qualify });
+    const data = Object.assign(userPlace.data(), { qualify: { value, comment } });
     await Model.doc(id).update(data);
     const rate = await getPlaceRate(userPlace.data().placeId);
-    res.json({ data: { rate, qualify } });
+    res.json({ data: { rate, myQualify: { value, comment } } });
   } catch (e) {
     next(e);
   }
