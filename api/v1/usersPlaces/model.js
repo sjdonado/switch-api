@@ -10,7 +10,6 @@ const getUsersPlacesByType = async (userId, type) => {
   const response = await Model
     .where('userId', '==', userId)
     .where('type', '==', type)
-    .where('visibility', '==', true)
     .get();
   return response.docs.map(doc => Object.assign({ id: doc.id }, doc.data()));
 };
@@ -20,7 +19,6 @@ const acceptOrReject = async (placeId, userId, type) => {
     placeId,
     userId,
     type,
-    visibility: true,
   });
   return userPlace;
 };

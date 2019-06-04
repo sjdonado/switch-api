@@ -50,9 +50,8 @@ module.exports.remove = async (req, res, next) => {
   const { id } = req.params;
   try {
     const userPlace = await Model.where('placeId', '==', id).get();
-    const data = Object.assign(userPlace.docs[0].data(), { visibility: false });
-    await Model.doc(userPlace.docs[0].id).update(data);
-    res.json({ data });
+    await Model.doc(userPlace.docs[0].id).delete();
+    res.json({ data: userPlace.docs[0].data() });
   } catch (e) {
     next(e);
   }
